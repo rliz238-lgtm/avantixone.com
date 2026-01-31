@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planillas Avantix One - Gestión de Nómina Profesional</title>
-    <meta name="description" content="Automatiza tu nómina con Avantix One. CCSS, Horas Extras, Multi-ciclo y más por solo $120 anuales.">
+    <meta name="description"
+        content="Automatiza tu nómina con Avantix One. CCSS, Horas Extras, Multi-ciclo y más por solo $120 anuales.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-    <header class="container" style="padding: 2rem 0; display: flex; justify-content: space-between; align-items: center;">
-        <div class="logo" style="font-size: 1.5rem; font-weight: 900;">Avantix <span class="gradient-text">One</span></div>
-        <nav>
-            <a href="#beneficios" style="color: white; text-decoration: none; margin-left: 2rem;">Beneficios</a>
-            <a href="#testimonios" style="color: white; text-decoration: none; margin-left: 2rem;">Testimonios</a>
-            <a href="#faq" style="color: white; text-decoration: none; margin-left: 2rem;">FAQ</a>
+    <header class="container header-nav">
+        <div class="logo">Avantix <span class="gradient-text">One</span></div>
+        <nav class="desktop-nav">
+            <a href="#beneficios">Beneficios</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#faq">FAQ</a>
         </nav>
+        <button class="mobile-menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
+
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <button class="close-menu" aria-label="Cerrar menú">&times;</button>
+            <a href="#beneficios" class="mobile-link">Beneficios</a>
+            <a href="#testimonios" class="mobile-link">Testimonios</a>
+            <a href="#faq" class="mobile-link">FAQ</a>
+            <a href="#" class="cta-button">Adquirir Plan</a>
+        </nav>
+    </div>
 
     <section class="hero">
         <div class="container">
             <h1>Lleva tus Planillas al <span class="gradient-text">Máximo Nivel</span></h1>
             <p>La solución definitiva para la gestión de nómina automatizada. Simple, potente y asequible.</p>
-            
+
             <div class="price-container">
                 <span style="font-size: 1.2rem; color: var(--text-muted);">Plan Anual</span>
                 <span class="price-tag">$120 USD</span>
@@ -41,19 +57,23 @@
 
     <section id="beneficios" class="benefits">
         <div class="container text-center" style="text-align: center;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Beneficios <span class="gradient-text">Poderosos</span></h2>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem;">Diseñado para simplificar los procesos más complejos de tu empresa.</p>
-            
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Beneficios <span class="gradient-text">Poderosos</span>
+            </h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem;">Diseñado para simplificar los
+                procesos más complejos de tu empresa.</p>
+
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <i class="fas fa-file-invoice"></i>
                     <h3>CCSS</h3>
-                    <p>Generación automática de reportes para la Caja Costarricense de Seguro Social con un solo clic.</p>
+                    <p>Generación automática de reportes para la Caja Costarricense de Seguro Social con un solo clic.
+                    </p>
                 </div>
                 <div class="benefit-card">
                     <i class="fas fa-clock"></i>
                     <h3>Horas Extras</h3>
-                    <p>Cálculo preciso de jornadas extraordinarias, nocturnas y feriados según la legislación vigente.</p>
+                    <p>Cálculo preciso de jornadas extraordinarias, nocturnas y feriados según la legislación vigente.
+                    </p>
                 </div>
                 <div class="benefit-card">
                     <i class="fas fa-sync"></i>
@@ -66,10 +86,12 @@
 
     <section id="testimonios" class="testimonial">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 4rem;">Lo que dicen nuestros <span class="gradient-text">Clientes</span></h2>
+            <h2 style="text-align: center; margin-bottom: 4rem;">Lo que dicen nuestros <span
+                    class="gradient-text">Clientes</span></h2>
             <div class="testimonial-card">
                 <img src="tom-tom-wok-logo.png" alt="Tom Tom Wok Logo" class="testimonial-logo">
-                <p class="testimonial-quote">"Avantix One transformó completamente nuestra gestión de personal. Lo que antes tardaba días, ahora se resuelve en minutos con total precisión."</p>
+                <p class="testimonial-quote">"Avantix One transformó completamente nuestra gestión de personal. Lo que
+                    antes tardaba días, ahora se resuelve en minutos con total precisión."</p>
                 <p class="testimonial-author">— Tom Tom Wok, Restaurante Premium</p>
             </div>
         </div>
@@ -77,19 +99,26 @@
 
     <section id="faq" class="faq">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3.5rem;">Preguntas <span class="gradient-text">Frecuentes</span></h2>
+            <h2 style="text-align: center; margin-bottom: 3.5rem;">Preguntas <span
+                    class="gradient-text">Frecuentes</span></h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">¿Qué incluye el plan de $120 anuales? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Incluye acceso total a la plataforma para una empresa, todos los módulos de cálculo y soporte técnico prioritario.</div>
+                    <div class="faq-question">¿Qué incluye el plan de $120 anuales? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Incluye acceso total a la plataforma para una empresa, todos los módulos de
+                        cálculo y soporte técnico prioritario.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">¿Es compatible con la legislación local? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Sí, está 100% adaptado a las normativas laborales de Costa Rica, incluyendo CCSS e INS.</div>
+                    <div class="faq-question">¿Es compatible con la legislación local? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Sí, está 100% adaptado a las normativas laborales de Costa Rica, incluyendo
+                        CCSS e INS.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">¿Puedo migrar mis datos actuales? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Contamos con herramientas de importación masiva para que comiences a trabajar en minutos.</div>
+                    <div class="faq-question">¿Puedo migrar mis datos actuales? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">Contamos con herramientas de importación masiva para que comiences a
+                        trabajar en minutos.</div>
                 </div>
             </div>
         </div>
@@ -97,11 +126,49 @@
 
     <footer style="background: #020617; padding: 4rem 0; border-top: 1px solid var(--glass-border);">
         <div class="container" style="text-align: center;">
-            <div class="logo" style="font-size: 2rem; font-weight: 900; margin-bottom: 1.5rem;">Avantix <span class="gradient-text">One</span></div>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">© 2026 Avantix Soluciones. Todos los derechos reservados.</p>
+            <div class="logo" style="font-size: 2rem; font-weight: 900; margin-bottom: 1.5rem;">Avantix <span
+                    class="gradient-text">One</span></div>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">© 2026 Avantix Soluciones. Todos los derechos
+                reservados.</p>
             <a href="#" class="cta-button">Empezar Ahora</a>
         </div>
     </footer>
 
+
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const closeMenu = document.querySelector('.closeMenu'); // Fixed selector to match class
+        const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Note: The HTML has "close-menu" class, but "closeMenu" was used in JS sometimes. 
+        // Checking the HTML: <button class="close-menu" ...>&times;</button>
+        const closeBtn = document.querySelector('.close-menu');
+
+        function toggleMenu() {
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // FAQ Toggle Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
+
 </html>
