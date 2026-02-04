@@ -401,9 +401,9 @@ h2 {
 }
 
 .testimonial-logo {
-    width: 120px;
-    height: auto;
-    border-radius: 50%;
+    max-width: 180px;
+    height: 60px;
+    object-fit: contain;
     margin-bottom: 2rem;
 }
 
