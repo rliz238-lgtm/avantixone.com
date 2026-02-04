@@ -3,7 +3,7 @@
     --primary: #2563eb;
     --secondary: #3b82f6;
     --accent: #10b981;
-    --bg-dark: #f8fafc;
+    --bg-dark: #ffffff;
     --bg-card: #ffffff;
     --text-main: #0f172a;
     --text-muted: #64748b;
@@ -43,7 +43,7 @@ body {
 }
 
 .logo-img {
-    height: 48px;
+    height: 56px;
     width: auto;
 }
 
@@ -178,7 +178,7 @@ h2 {
 /* Features Detailed Section */
 .features-detailed {
     padding: 100px 0;
-    background: #fdfcfe;
+    background: #ffffff;
 }
 
 .feature-row {
