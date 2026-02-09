@@ -59,12 +59,49 @@
 </head>
 
 <body>
-    <div id="gjs"></div>
+    <div id="gjs">
+        <header class="container header-nav">
+            <div class="logo">
+                <img src="img/logo_avantix_one.png" alt="Avantix One" class="logo-img">
+            </div>
+            <nav class="desktop-nav">
+                <a href="#beneficios">Beneficios</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Lleva tus Planillas al <span class="gradient-text">Máximo Nivel</span></h1>
+                <p>La solución definitiva para la gestión de nómina automatizada.</p>
+                <div class="price-container">
+                    <span class="price-tag">$120 USD</span>
+                </div>
+                <a href="#" class="cta-button">Adquirir Plan Anual</a>
+                <img src="img/hero-mockup-new.png" class="hero-image">
+            </div>
+        </section>
+
+        <section id="beneficios" class="benefits">
+            <div class="container text-center">
+                <h2>¿Por qué elegir <span class="gradient-text">Avantix One?</span></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-file-invoice"></i>
+                        <h3>CCSS</h3>
+                        <p>Generación automática de reportes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script type="text/javascript">
         const editor = grapesjs.init({
             container: '#gjs',
             height: '100vh',
+            fromElement: true,
             width: 'auto',
             storageManager: false,
             plugins: ['gjs-preset-webpage'],
