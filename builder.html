@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Avantix One | Visual Builder</title>
+    <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/grapesjs"></script>
+    <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gjs-cv-canvas {
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Panel Styles */
+        .gjs-pn-commands {
+            position: relative;
+            left: 0;
+            top: 0;
+            box-shadow: none;
+        }
+
+        .gjs-logo-cont {
+            padding: 10px;
+            background: #2563eb;
+            color: white;
+            text-align: center;
+        }
+
+        .gjs-logo-cont img {
+            height: 30px;
+        }
+
+        .gjs-block {
+            width: 100% !important;
+            padding: 15px !important;
+            min-height: 50px !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            background: #fff !important;
+            border-radius: 8px !important;
+            transition: all 0.2s !important;
+        }
+
+        .gjs-block:hover {
+            border-color: #2563eb !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gjs"></div>
+
+    <script type="text/javascript">
+        const editor = grapesjs.init({
+            container: '#gjs',
+            height: '100vh',
+            width: 'auto',
+            storageManager: false,
+            plugins: ['gjs-preset-webpage'],
+            canvas: {
+                styles: [
+                    'style.css',
+                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+                    'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap'
+                ]
+            }
+        });
+
+        const bm = editor.BlockManager;
+
+        // Custom Blocks mapping the exact sections of index.html
+
+        bm.add('hero-section', {
+            label: '<b>Hero Section</b><br><small>Encabezado principal</small>',
+            category: 'Avantix One',
+            attributes: { class: 'fa fa-rocket' },
+            content: `
+                <section class="hero">
+                    <div class="container">
+                        <h1>Lleva tus Planillas al <span class="gradient-text">Máximo Nivel</span></h1>
+                        <p>La solución definitiva para la gestión de nómina automatizada. Simple, potente y asequible.</p>
+                        <div class="price-container">
+                            <span style="font-size: 1.2rem; color: #64748b;">Plan Anual</span>
+                            <span class="price-tag">$120 USD</span>
+                        </div>
+                        <a href="#" class="cta-button">Adquirir Plan Anual</a>
+                        <img src="img/hero-mockup-new.png" class="hero-image">
+                    </div>
+                </section>`
+        });
+
+        bm.add('feature-item', {
+            label: '<b>Fila de Función</b><br><small>Imagen + Texto</small>',
+            category: 'Avantix One',
+            attributes: { class: 'fa fa-columns' },
+            content: `
+                <section class="features-detailed">
+                    <div class="container">
+                        <div class="feature-row">
+                            <div class="feature-text">
+                                <span class="badge">NUEVA FUNCIÓN</span>
+                                <h2>Título de la <span class="gradient-text">Funcionalidad</span></h2>
+                                <p>Descripción detallada de cómo funciona esta herramienta.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Beneficio clave 1</li>
+                                    <li><i class="fas fa-check"></i> Beneficio clave 2</li>
+                                </ul>
+                            </div>
+                            <div class="feature-image">
+                                <img src="img/employee-portal.png">
+                            </div>
+                        </div>
+                    </div>
+                </section>`
+        });
+
+        bm.add('benefits-grid', {
+            label: '<b>Grid de Beneficios</b><br><small>3 columnas con iconos</small>',
+            category: 'Avantix One',
+            attributes: { class: 'fa fa-th' },
+            content: `
+                <section class="benefits">
+                    <div class="container text-center">
+                        <h2>Beneficios <span class="gradient-text">Clave</span></h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <i class="fas fa-clock"></i>
+                                <h3>Título</h3>
+                                <p>Descripción corta del beneficio.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <i class="fas fa-sync"></i>
+                                <h3>Título</h3>
+                                <p>Descripción corta del beneficio.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <i class="fas fa-file-invoice"></i>
+                                <h3>Título</h3>
+                                <p>Descripción corta del beneficio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>`
+        });
+
+        bm.add('testimonial', {
+            label: '<b>Testimonio</b><br><small>Tarjeta de cliente</small>',
+            category: 'Avantix One',
+            attributes: { class: 'fa fa-quote-left' },
+            content: `
+                <section class="testimonial">
+                    <div class="container">
+                        <div class="testimonial-card">
+                            <img src="img/tom-tom-wok-logo.png" class="testimonial-logo">
+                            <p class="testimonial-quote">"Cita del cliente aquí."</p>
+                            <p class="testimonial-author">— Nombre del Cliente</p>
+                        </div>
+                    </div>
+                </section>`
+        });
+
+        // Add custom Save/Download button
+        editor.Panels.addButton('options', [{
+            id: 'export-code',
+            className: 'fa fa-code',
+            command: 'export-code',
+            attributes: { title: 'Exportar Código' }
+        }]);
+
+        editor.Commands.add('export-code', {
+            run: function (editor) {
+                const html = editor.getHtml();
+                const css = editor.getCss();
+
+                const finalCode = `<html><head><link rel="stylesheet" href="style.css"></head><body>${html}</body></html>`;
+
+                // Show in a modal or new window
+                const newWin = window.open();
+                newWin.document.write('<h2>Copia este código HTML:</h2><textarea style="width:100%; height:80%;" readonly>' + finalCode + '</textarea>');
+            }
+        });
+
+        // Add a "Help" label to the top panel
+        editor.Panels.addPanel({
+            id: 'help-panel',
+            content: '<div style="padding: 10px; color: #2563eb; font-weight: bold;">AVANTIX BUILDER V1.0</div>',
+        });
+
+    </script>
+</body>
+
+</html>
