@@ -11,8 +11,8 @@
 
     /* Fluid Spacing & Type */
     --padding-container: clamp(1rem, 5vw, 2rem);
-    --font-heading: clamp(2.5rem, 8vw, 4rem);
-    --font-subheading: clamp(1.5rem, 5vw, 2.5rem);
+    --font-heading: clamp(2rem, 6vw, 3.2rem);
+    --font-subheading: clamp(1.4rem, 4vw, 2.2rem);
 }
 
 * {
@@ -140,7 +140,7 @@ h2 {
 
 /* Layout */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--padding-container);
 }
@@ -148,8 +148,13 @@ h2 {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: clamp(60px, 10vh, 150px) 0;
-    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+    padding: clamp(100px, 15vh, 200px) 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('img/hero-mockup-new.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero p {
