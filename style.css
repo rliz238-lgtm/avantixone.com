@@ -388,11 +388,12 @@ h2 {
 .testimonial {
     background: #f1f5f9;
     padding: 100px 0;
+    margin-bottom: 100px;
 }
 
 .testimonial-card {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 100px;
     background: var(--bg-card);
     padding: 3rem;
     border-radius: 30px;
@@ -420,6 +421,10 @@ h2 {
 }
 
 /* FAQ Section */
+.faq {
+    padding: 100px 0;
+}
+
 .faq-list {
     max-width: 800px;
     margin: 3rem auto 0;
