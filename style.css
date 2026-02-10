@@ -34,8 +34,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem var(--padding-container);
-    margin-top: 30px;
+    padding: 2.5rem var(--padding-container);
+    margin: 40px auto;
 }
 
 .logo {
