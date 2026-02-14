@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte | Planillas Avantix One</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css?v=2.2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .support-container {
+            padding: 10rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+        }
+
+        .support-form {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: white;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="header-nav">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">
+                <img src="img/logo-planillas.png" alt="Avantix One" class="logo-img">
+            </a>
+            <div class="desktop-nav">
+                <a href="index.html#funciones">Funciones</a>
+                <a href="index.html#como-funciona">Cómo funciona</a>
+                <a href="index.html#precio">Precio</a>
+                <a href="index.html#faq">Preguntas</a>
+                <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button"
+                    style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Probar 7 días gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="support-container">
+            <div class="section-header">
+                <h1>Centro de <span class="gradient-text">Soporte</span></h1>
+                <p>Estamos aquí para ayudarte a automatizar tu nómina sin complicaciones.</p>
+            </div>
+
+            <div class="contact-grid">
+                <a href="https://wa.me/50663602181" target="_blank" class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>+506 6360 2181</p>
+                    <span style="color: var(--primary); font-weight: 700; margin-top: 1rem; display: block;">Chatear
+                        ahora →</span>
+                </a>
+                <a href="mailto:info@avantixone.com" class="contact-card">
+                    <i class="far fa-envelope"></i>
+                    <h3>Correo Electrónico</h3>
+                    <p>info@avantixone.com</p>
+                    <span style="color: var(--primary); font-weight: 700; margin-top: 1rem; display: block;">Enviar
+                        mensaje →</span>
+                </a>
+            </div>
+
+            <div class="support-form">
+                <h2 style="margin-bottom: 2rem; text-align: center;">Escríbenos directamente</h2>
+                <form action="https://formspree.io/f/info@avantixone.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" placeholder="Escribe tu consulta aquí..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="img/logo-planillas.png" alt="Logo" style="height: 50px; margin-bottom: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Planillas Avantix One © 2026 | info@avantixone.com
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; font-weight: 600;">
+                <a href="terminos.html">Términos</a>
+                <a href="privacidad.html">Privacidad</a>
+                <a href="soporte.html">Soporte</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
