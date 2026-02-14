@@ -3,114 +3,98 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WHJSDNF4');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4C8RWV6HC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-G4C8RWV6HC');
-    </script>
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1619126312859475');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1619126312859475&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <title>Planillas Avantix One - Gestión de Nómina Profesional</title>
+    <title>Planillas Avantix One | Cálculo automático y gestión de nómina</title>
     <meta name="description"
-        content="Automatiza tu nómina con Avantix One. CCSS, Horas Extras, Multi-ciclo y más por solo $120 anuales.">
-    <link rel="stylesheet" href="style.css?v=1.8">
+        content="Planillas Avantix One: calculá planillas en minutos sin Excel. Horas extra, días dobles, historial, WhatsApp automático y Excel listo para CCSS. Probalo 7 días gratis.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css?v=2.1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJSDNF4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <header class="container header-nav">
-        <div class="logo">
-            <img src="img/logo-planillas.png" alt="Avantix One" class="logo-img">
+    <!-- Navbar -->
+    <nav class="header-nav">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="#" class="logo">
+                <img src="img/logo-planillas.png" alt="Avantix One" class="logo-img">
+                <span>Planillas Avantix One</span>
+            </a>
+            <div class="desktop-nav">
+                <a href="#funciones">Funciones</a>
+                <a href="#como-funciona">Cómo funciona</a>
+                <a href="#precio">Precio</a>
+                <a href="#faq">Preguntas</a>
+                <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button"
+                    style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Probar 7 días gratis</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <nav class="desktop-nav">
-            <a href="#beneficios">Beneficios</a>
-            <a href="#testimonios">Testimonios</a>
-            <a href="#faq">FAQ</a>
-        </nav>
-        <button class="mobile-menu-toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-        </button>
-    </header>
+    </nav>
 
+    <!-- Mobile Nav -->
     <div class="mobile-nav-overlay">
         <nav class="mobile-nav">
             <button class="close-menu" aria-label="Cerrar menú">&times;</button>
-            <a href="#beneficios" class="mobile-link">Beneficios</a>
-            <a href="#testimonios" class="mobile-link">Testimonios</a>
-            <a href="#faq" class="mobile-link">FAQ</a>
-            <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button">Ingresa a una prueba
-                gratuita de 7 días</a>
+            <a href="#funciones" class="mobile-link">Funciones</a>
+            <a href="#como-funciona" class="mobile-link">Cómo funciona</a>
+            <a href="#precio" class="mobile-link">Precio</a>
+            <a href="#faq" class="mobile-link">Pregunaas</a>
+            <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button">Probar 7 días gratis</a>
         </nav>
     </div>
 
-    <section class="hero">
+    <!-- Hero -->
+    <header class="hero">
         <div class="container">
-            <h1>Calculadora de planillas <span class="gradient-text"> Con registro de todos los pagos realizados</span>
-            </h1>
-            <p>Automatiza el pago de planillas con el modulo de registro de horas para empleados.</p>
-
-            <div class="price-container">
-                <span
-                    style="font-size: 2.2rem; color: var(--text-main); font-weight: 900; display: block; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Plan
-                    Anual</span>
-                <span class="price-tag">$120 USD</span>
-                <span style="color: var(--text-muted);">al año por empresa</span>
+            <h1>Calculá planillas en minutos y <span class="gradient-text">olvídate del desorden.</span></h1>
+            <p>Horas extra, días dobles, historial, reportes en Excel, importa datos desde excel. Envío de resumen
+                automático por WhatsApp.</p>
+            <div class="hero-btns">
+                <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button">Probar 7 días
+                    gratis</a>
+                <div class="microcopy">
+                    <span><i class="fas fa-check-circle" style="color: var(--primary);"></i> Acceso inmediato</span>
+                    <span><i class="fas fa-mobile-alt" style="color: var(--primary);"></i> Funciona desde celular</span>
+                </div>
             </div>
+        </div>
+    </header>
 
-            <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button">Ingresa a una prueba
-                gratuita de 7 días</a>
+    <!-- Sección Dolor -->
+    <section id="dolor" class="pain-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Si haces planillas en Excel o a mano, esto te va a sonar familiar</h2>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card"><i class="fas fa-times-circle"></i> <span>Horas extra mal calculadas</span></div>
+                <div class="pain-card"><i class="fas fa-times-circle"></i> <span>Días dobles confusos</span></div>
+                <div class="pain-card"><i class="fas fa-times-circle"></i> <span>Excel desordenado</span></div>
+                <div class="pain-card"><i class="fas fa-times-circle"></i> <span>Historial de pagos perdido</span></div>
+                <div class="pain-card"><i class="fas fa-times-circle"></i> <span>CCSS a última hora</span></div>
+                <div class="pain-card"><i class="fas fa-times-circle"></i> <span>Reclamos por pagos</span></div>
+            </div>
+            <p class="pain-footer">Planillas Avantix One automatiza todo en minutos.</p>
         </div>
     </section>
 
-    <section id="features" class="features-detailed">
+    <!-- Features Detailed (Existing + Mockup) -->
+    <section id="funciones" class="features-detailed">
         <div class="container">
+            <!-- Calculadora Pro con Mockup -->
             <div class="feature-row">
                 <div class="feature-text">
                     <span class="badge">Calculadora Pro</span>
                     <h2>Cálculo de Planillas <span class="gradient-text">Sin Complicaciones</span></h2>
                     <p>Nuestra potente calculadora procesa automáticamente todos los rebajos de ley, horas extra y pagos
-                        netos. Una herramienta diseñada para la precisión absoluta en cada pago.</p>
+                        netos.</p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check"></i> Rebajos de CCSS automáticos</li>
                         <li><i class="fas fa-check"></i> Cálculo de horas extra</li>
@@ -185,16 +169,13 @@
                                     <button class="save-btn"><i class="fas fa-save"></i> Guardar Registros</button>
                                 </div>
                                 <div class="calc-summary-v2">
-                                    <div class="summary-box">
-                                        <small>Total Horas</small>
+                                    <div class="summary-box"><small>Total Horas</small>
                                         <div class="val hours-total">18.00h</div>
                                     </div>
-                                    <div class="summary-box">
-                                        <small>Total CCSS</small>
+                                    <div class="summary-box"><small>Total CCSS</small>
                                         <div class="val ccss-total">₡4 802</div>
                                     </div>
-                                    <div class="summary-box primary">
-                                        <small>Pago Neto</small>
+                                    <div class="summary-box primary"><small>Pago Neto</small>
                                         <div class="val net-total pulse">₡40 198</div>
                                     </div>
                                 </div>
@@ -204,12 +185,12 @@
                 </div>
             </div>
 
-            <div class="feature-row">
+            <!-- Módulo de Empleados -->
+            <div class="feature-row reverse">
                 <div class="feature-text">
                     <span class="badge">Módulo de Empleados</span>
                     <h2>Registro de Horas <span class="gradient-text">Fácil y Seguro</span></h2>
-                    <p>Tus colaboradores pueden ingresar a la plataforma con un PIN personal para registrar sus horas de
-                        entrada, salida y almuerzo. Una interfaz simplificada diseñada para evitar errores.</p>
+                    <p>Tus colaboradores pueden registrar sus horas desde cualquier dispositivo con un PIN personal.</p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check"></i> Acceso con PIN único</li>
                         <li><i class="fas fa-check"></i> Registro en tiempo real</li>
@@ -217,265 +198,251 @@
                     </ul>
                 </div>
                 <div class="feature-image">
-                    <img src="img/employee-portal.png" alt="Módulo de Empleados Avantix One">
-                </div>
-            </div>
-
-            <div class="feature-row reverse">
-                <div class="feature-text">
-                    <span class="badge">Gestión de Planillas</span>
-                    <h2>Control Total y <span class="gradient-text">Ajustes en Segundos</span></h2>
-                    <p>Toda la información enviada por los empleados llega directamente al módulo de planillas. Los
-                        administradores pueden revisar, editar y realizar ajustes necesarios antes del cierre final.</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Edición masiva de registros</li>
-                        <li><i class="fas fa-check"></i> Cálculo automático de extras</li>
-                        <li><i class="fas fa-check"></i> Auditoría completa de cada cambio</li>
-                    </ul>
-                </div>
-                <div class="feature-image">
-                    <img src="img/payroll-management.png" alt="Gestión de Planillas Avantix One">
+                    <img src="img/employee-portal.png" alt="Módulo de Empleados">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="beneficios" class="benefits">
-        <div class="container text-center" style="text-align: center;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">¿Por qué elegir <span class="gradient-text">Avantix
-                    One?</span>
-            </h2>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem;">Potencia tu empresa con
-                herramientas diseñadas para el crecimiento real.</p>
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Así funciona</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <p>Ingresas entrada y salida (o lo hace el trabajador)</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <p>El sistema calcula todo automáticamente</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <p>Revisas o ajustas horas</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <p>Agregas rebajos o adelantos (opcional)</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">5</div>
+                    <p>Pagas, cierras y envías resumen por WhatsApp</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <p style="margin-bottom: 2rem; font-weight: 700; color: var(--text-muted);">Puedes exportar reporte de
+                    Excel</p>
+                <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button">Probar 7 días
+                    gratis</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Beneficios Clave -->
+    <section class="key-benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que ganás desde el primer día</h2>
+            </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <i class="fas fa-file-invoice"></i>
-                    <h3>CCSS</h3>
-                    <p>Generación automática de reportes para la Caja Costarricense de Seguro Social con un solo clic.
-                    </p>
+                    <i class="fas fa-calculator"></i>
+                    <h3>Cálculo automático</h3>
+                    <p>Horas, extras y dobles calculadas sin errores manuales.</p>
                 </div>
                 <div class="benefit-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Horas Extras</h3>
-                    <p>Cálculo preciso de jornadas extraordinarias, nocturnas y feriados según la legislación vigente.
-                    </p>
+                    <i class="fas fa-history"></i>
+                    <h3>Historial ordenado</h3>
+                    <p>Todo el registro histórico de tus empleados en un solo lugar.</p>
                 </div>
                 <div class="benefit-card">
-                    <i class="fas fa-sync"></i>
-                    <h3>Multi-ciclo</h3>
-                    <p>Flexibilidad total para manejar pagos semanales, bisemanales, quincenales o mensuales.</p>
+                    <i class="fas fa-file-excel"></i>
+                    <h3>Excel para CCSS</h3>
+                    <p>Reportes listos para cargar en los sistemas de ley.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp al empleado</h3>
+                    <p>Envío automático de comprobantes de pago detallados.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sectores" class="sectors">
+    <!-- Comparación -->
+    <section class="comparison-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1rem;">Soluciones para <span class="gradient-text">Cada
-                    Sector</span></h2>
-            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 3.5rem;">Avantix
-                One se adapta perfectamente a las necesidades específicas de diversos tipos de negocio, automatizando y
-                facilitando el pago de Planillas sin importar su complejidad.</p>
-
-            <div class="sectors-grid">
-                <div class="sector-card">
-                    <img src="img/oficinas_v2.jpg" alt="Oficinas y Corporativos" class="sector-image">
-                    <div class="sector-content">
-                        <h3>Oficinas</h3>
-                        <p>Control de horarios administrativos, gestión de vacaciones y cumplimiento legal simplificado.
-                        </p>
-                    </div>
+            <div class="section-header">
+                <h2>Excel vs Planillas Avantix One</h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-card bad">
+                    <h3>Excel (Manual)</h3>
+                    <ul class="comparison-list">
+                        <li><i class="fas fa-times"></i> Fórmulas rotas o perdidas</li>
+                        <li><i class="fas fa-times"></i> Errores en suma de horas</li>
+                        <li><i class="fas fa-times"></i> Sin historial consolidado</li>
+                        <li><i class="fas fa-times"></i> Difícil desde el móvil</li>
+                        <li><i class="fas fa-times"></i> Reclamos constantes</li>
+                    </ul>
                 </div>
-                <div class="sector-card">
-                    <img src="img/medicos_v2.jpg" alt="Sector Salud" class="sector-image">
-                    <div class="sector-content">
-                        <h3>Salud</h3>
-                        <p>Gestión eficiente de turnos médicos, personal de enfermería y cálculos precisos de guardias.
-                        </p>
-                    </div>
-                </div>
-                <div class="sector-card">
-                    <img src="img/gimnacios_v2.jpg" alt="Gimnasios y Centros Fitness" class="sector-image">
-                    <div class="sector-content">
-                        <h3>Gimnasios</h3>
-                        <p>Control total sobre instructores y personal operativo con marcas rápidas y seguras.</p>
-                    </div>
-                </div>
-                <div class="sector-card">
-                    <img src="img/restaurantes_v2.jpg" alt="Restaurantes y Gastronomía" class="sector-image">
-                    <div class="sector-content">
-                        <h3>Restaurantes</h3>
-                        <p>Manejo de horarios rotativos y múltiples turnos característicos del sector gastronómico.</p>
-                    </div>
-                </div>
-                <div class="sector-card">
-                    <img src="img/construccion_v2.jpg" alt="Sector Construcción" class="sector-image">
-                    <div class="sector-content">
-                        <h3>Construcción</h3>
-                        <p>Seguimiento detallado de trabajadores en campo y precisión en el cálculo de horas por
-                            proyecto.</p>
-                    </div>
+                <div class="comparison-card good">
+                    <h3>Avantix One (Auto)</h3>
+                    <ul class="comparison-list">
+                        <li><i class="fas fa-check"></i> Algoritmos de ley probados</li>
+                        <li><i class="fas fa-check"></i> Cálculo instantáneo de extras</li>
+                        <li><i class="fas fa-check"></i> Registro centralizado y seguro</li>
+                        <li><i class="fas fa-check"></i> 100% Mobile Ready</li>
+                        <li><i class="fas fa-check"></i> Empleados satifechos</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonios" class="testimonial">
+    <!-- Precio -->
+    <section id="precio" class="pricing-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 4rem;">Lo que dicen nuestros <span
-                    class="gradient-text">Clientes</span></h2>
-            <div class="testimonial-card">
-                <img src="img/tom-tom-wok-logo.png" alt="Tom Tom Wok Logo" class="testimonial-logo">
-                <p class="testimonial-quote">"Avantix One transformó completamente nuestra gestión de personal. Lo que
-                    antes tardaba días, ahora se resuelve en minutos con total precisión."</p>
-                <p class="testimonial-author">— Tom Tom Wok, Restaurante Premium</p>
+            <div class="section-header">
+                <h2>Pruébalo durante 7 días</h2>
+                <p>Si te funciona, el cargo se hace automático.</p>
+            </div>
+            <div class="pricing-card">
+                <span class="badge" style="background: #F5F3FF; margin-bottom: 2rem;">PLAN ANUAL</span>
+                <div class="price">$120 <span>/ año</span></div>
+                <p style="margin-bottom: 2rem; font-weight: 700; color: var(--secondary);">Pago único anual. Sin
+                    mensualidades. Sin cobro por empleado.</p>
+                <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button"
+                    style="width: 100%;">Empieza tu prueba de 7 días</a>
             </div>
         </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3.5rem;">Preguntas <span
-                    class="gradient-text">Frecuentes</span></h2>
-            <div class="faq-list">
+            <div class="section-header">
+                <h2>Preguntas frecuentes</h2>
+            </div>
+            <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">¿Qué incluye el plan de $120 anuales? <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">Incluye acceso total a la plataforma para una empresa, todos los módulos de
-                        cálculo y soporte técnico prioritario.</div>
+                    <div class="faq-question">¿El demo es realmente gratis? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Sí, tienes 7 días completos para probar todas las funciones sin
+                        restricciones.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">¿Es compatible con la legislación local? <i
+                    <div class="faq-question">¿Tengo que poner tarjeta? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Sí, Hotmart requiere una tarjeta de crédito o débito válida para iniciar el
+                        periodo de prueba.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Qué pasa al terminar el demo? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Se te procesará el cobro anual automáticamente en Hotmart si no cancelas
+                        antes de que terminen los 7 días.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Puedo exportar a Excel durante el demo? <i
                             class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Sí, está 100% adaptado a las normativas laborales de Costa Rica, incluyendo
-                        CCSS e INS.</div>
+                    <div class="faq-answer">Sí, todas las funciones de exportación están habilitadas desde el primer
+                        minuto.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">¿Cómo funciona el módulo de empleados? <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">¿Funciona desde el celular? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Sí, la plataforma es 100% responsiva y optimizada para dispositivos móviles.
                     </div>
-                    <div class="faq-answer">Cada colaborador recibe un PIN único con el que ingresa desde cualquier
-                        dispositivo para marcar sus horas. Luego, los administradores pueden revisar y aprobar estos
-                        registros en segundos.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">¿Mis datos están seguros? <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question">¿Cuántos empleados puedo agregar? <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer">Sí, utilizamos encriptación de grado bancario para proteger toda la
-                        información salarial y personal de tu empresa.</div>
+                    <div class="faq-answer">No hay límites. Puedes agregar todos los trabajadores que tu empresa
+                        necesite.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="background: var(--bg-card); padding: 4rem 0; border-top: 1px solid var(--glass-border);">
-        <div class="container" style="text-align: center;">
-            <div class="logo" style="margin-bottom: 1.5rem;">
-                <img src="img/logo-planillas.png" alt="Avantix One" class="logo-img" style="height: 40px;">
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Dejá Excel. Probalo 7 días gratis.</h2>
+            <p>Orden, cálculo automático, historial y CCSS listo.</p>
+            <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button"
+                style="padding: 1.5rem 5rem; font-size: 1.3rem;">Probar 7 días gratis</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="img/logo-planillas.png" alt="Logo" style="height: 50px; margin-bottom: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Planillas Avantix One © 2026 | info@avantixone.com
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; font-weight: 600;">
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+                <a href="mailto:info@avantixone.com">Soporte</a>
             </div>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">© 2026 Avantix Soluciones. Todos los derechos
-                reservados.</p>
-            <a href="https://pay.hotmart.com/L104170872R" target="_blank" class="cta-button">Ingresa a una prueba
-                gratuita de 7 días</a>
         </div>
     </footer>
 
-
     <script>
+        // Menu Toggle
         const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const overlay = document.querySelector('.mobile-nav-overlay');
         const closeBtn = document.querySelector('.close-menu');
+        const links = document.querySelectorAll('.mobile-link');
 
-        function toggleMenu() {
-            mobileNavOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? 'hidden' : '';
-        }
+        menuToggle.onclick = () => overlay.classList.add('active');
+        closeBtn.onclick = () => overlay.classList.remove('active');
+        links.forEach(l => l.onclick = () => overlay.classList.remove('active'));
 
-        menuToggle.addEventListener('click', toggleMenu);
-        closeBtn.addEventListener('click', toggleMenu);
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNavOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // FAQ Toggle Logic
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
-        // Live Calculator Animation Logic
-        function animateValue(obj, start, end, duration, prefix = '', suffix = '') {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const val = Math.floor(progress * (end - start) + start);
-                obj.innerHTML = prefix + val.toLocaleString() + suffix;
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.onclick = () => {
+                const item = q.parentElement;
+                const isOpen = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                if (!isOpen) {
+                    item.classList.add('active');
+                    item.querySelector('.faq-answer').style.display = 'block';
                 }
             };
-            window.requestAnimationFrame(step);
-        }
+        });
 
-        function runCalculatorDemo() {
-            const netTotal = document.querySelector('.net-total');
-            const hoursTotal = document.querySelector('.hours-total');
-            const ccssTotal = document.querySelector('.ccss-total');
-            const rows = document.querySelectorAll('.animate-row');
+        // Animation Logic for Calculator
+        function runCalc() {
+            const net = document.querySelector('.net-total');
+            const hours = document.querySelector('.hours-total');
+            const ccss = document.querySelector('.ccss-total');
 
-            // Reset rows
-            rows.forEach(row => {
-                row.style.animation = 'none';
-                row.offsetHeight; /* trigger reflow */
-                row.style.animation = null;
-            });
-
-            // Animate numbers
-            animateValue(netTotal, 0, 40198, 2000, '₡');
-            animateValue(ccssTotal, 0, 4802, 2000, '₡');
-            // Hours is a bit different because of the 'h' and decimal
-            let hStart = 0;
-            let hEnd = 18.00;
-            const hStep = (timestamp) => {
-                if (!animateValue.hStartTS) animateValue.hStartTS = timestamp;
-                const progress = Math.min((timestamp - animateValue.hStartTS) / 2000, 1);
-                const val = (progress * (hEnd - hStart) + hStart).toFixed(2);
-                hoursTotal.innerHTML = val + 'h';
-                if (progress < 1) {
-                    window.requestAnimationFrame(hStep);
-                } else {
-                    animateValue.hStartTS = null;
-                }
+            let start = 0;
+            const animate = (obj, target, prefix = '', suffix = '') => {
+                let current = 0;
+                const step = () => {
+                    current += target / 60;
+                    if (current < target) {
+                        obj.innerHTML = prefix + Math.floor(current).toLocaleString() + suffix;
+                        requestAnimationFrame(step);
+                    } else {
+                        obj.innerHTML = prefix + target.toLocaleString() + suffix;
+                    }
+                };
+                step();
             };
-            window.requestAnimationFrame(hStep);
+
+            animate(net, 40198, '₡');
+            animate(ccss, 4802, '₡');
+            hours.innerHTML = '18.00h'; // Simple for hours
         }
 
-        // Run animation when in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    runCalculatorDemo();
-                }
-            });
+        const obs = new IntersectionObserver((es) => {
+            if (es[0].isIntersecting) runCalc();
         }, { threshold: 0.5 });
-
-        observer.observe(document.querySelector('.calculator-mockup'));
-
-        // Repeat every 10 seconds for flavor
-        setInterval(() => {
-            if (document.visibilityState === 'visible') {
-                runCalculatorDemo();
-            }
-        }, 8000);
+        obs.observe(document.querySelector('.calculator-mockup'));
     </script>
 </body>
 
