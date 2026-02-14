@@ -677,15 +677,143 @@ section {
 
 .calc-content {
     padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.calc-employee-selection {
+    margin-bottom: 2rem;
+}
+
+.calc-employee-selection label {
+    display: block;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.select-box {
+    padding: 0.85rem 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: #fcfcff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.calc-table-wrapper {
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.calc-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calc-table th {
+    text-align: left;
+    padding: 1rem 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.calc-table td {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid var(--bg-light);
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.calc-table td i {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
+}
+
+.hours-val {
+    color: var(--text-main);
+}
+
+.ccss-val {
+    color: #EF4444;
+}
+
+.net-val {
+    color: #10B981;
+    font-weight: 800;
+}
+
+.calc-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--bg-light);
+}
+
+.add-day {
+    color: var(--text-main);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
 
 .save-btn {
     background: var(--primary);
-    box-shadow: 0 8px 16px rgba(124, 58, 237, 0.2);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.calc-summary-v2 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.summary-box {
+    text-align: center;
+}
+
+.summary-box small {
+    display: block;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    font-size: 0.75rem;
 }
 
 .summary-box .val {
+    font-size: 1.4rem;
+    font-weight: 900;
     color: var(--primary);
+}
+
+.summary-box.primary .val {
+    color: #10B981;
 }
 
 /* Animations */
