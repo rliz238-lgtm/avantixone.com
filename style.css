@@ -513,7 +513,10 @@ h2 {
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    min-height: 500px;
+    min-height: 600px;
+    /* Increased and fixed to prevent height jumps */
+    height: 600px;
+    /* Explicit height to stabilize layout */
     margin: 0 auto;
     font-family: 'Inter', sans-serif;
 }
@@ -802,6 +805,11 @@ h2 {
 }
 
 @media (max-width: 992px) {
+    .calculator-mockup.full-design {
+        height: auto;
+        /* Return to auto on mobile where layout is column */
+        min-height: auto;
+    }
 
     .feature-row,
     .feature-row.reverse {
