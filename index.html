@@ -137,6 +137,67 @@
                     <img src="img/payroll-management.png" alt="Gestión de Planillas Avantix One">
                 </div>
             </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <span class="badge">Calculadora Pro</span>
+                    <h2>Cálculo de Planillas <span class="gradient-text">Sin Complicaciones</span></h2>
+                    <p>Nuestra potente calculadora procesa automáticamente todos los rebajos de ley, horas extra y pagos
+                        netos. Una herramienta diseñada para la precisión absoluta en cada pago.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Rebajos de CCSS automáticos</li>
+                        <li><i class="fas fa-check"></i> Reportes listos para el INS</li>
+                        <li><i class="fas fa-check"></i> Desglose detallado por empleado</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="calculator-mockup">
+                        <div class="calc-header">
+                            <div class="calc-title">Calculadora de Pago Semanal</div>
+                            <div class="calc-user">
+                                <span class="dot green"></span> Rogelio
+                            </div>
+                        </div>
+                        <div class="calc-body">
+                            <div class="calc-row labels">
+                                <span>Fecha</span>
+                                <span>Entrada</span>
+                                <span>Salida</span>
+                                <span>Horas</span>
+                                <span>Neto</span>
+                            </div>
+                            <div class="calc-row items animate-row">
+                                <span class="date-cell">14/02/2026</span>
+                                <span class="time-cell">08:00 a.m.</span>
+                                <span class="time-cell">05:00 p.m.</span>
+                                <span class="hours-cell">9.00h</span>
+                                <span class="net-cell">₡20,099</span>
+                            </div>
+                            <div class="calc-row items animate-row" style="animation-delay: 1s;">
+                                <span class="date-cell">15/02/2026</span>
+                                <span class="time-cell">08:00 a.m.</span>
+                                <span class="time-cell">05:00 p.m.</span>
+                                <span class="hours-cell">9.00h</span>
+                                <span class="net-cell">₡20,099</span>
+                            </div>
+                        </div>
+                        <div class="calc-footer">
+                            <div class="footer-item">
+                                <small>Total Horas</small>
+                                <div class="val hours-total">18.00h</div>
+                            </div>
+                            <div class="footer-item">
+                                <small>Total CCSS</small>
+                                <div class="val ccss-total">₡4,802</div>
+                            </div>
+                            <div class="footer-item primary">
+                                <small>Pago Neto</small>
+                                <div class="val net-total pulse">₡40,198</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -283,12 +344,8 @@
 
     <script>
         const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const closeMenu = document.querySelector('.closeMenu'); // Fixed selector to match class
         const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
         const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        // Note: The HTML has "close-menu" class, but "closeMenu" was used in JS sometimes. 
-        // Checking the HTML: <button class="close-menu" ...>&times;</button>
         const closeBtn = document.querySelector('.close-menu');
 
         function toggleMenu() {
@@ -314,6 +371,72 @@
                 item.classList.toggle('active');
             });
         });
+
+        // Live Calculator Animation Logic
+        function animateValue(obj, start, end, duration, prefix = '', suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const val = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = prefix + val.toLocaleString() + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function runCalculatorDemo() {
+            const netTotal = document.querySelector('.net-total');
+            const hoursTotal = document.querySelector('.hours-total');
+            const ccssTotal = document.querySelector('.ccss-total');
+            const rows = document.querySelectorAll('.animate-row');
+
+            // Reset rows
+            rows.forEach(row => {
+                row.style.animation = 'none';
+                row.offsetHeight; /* trigger reflow */
+                row.style.animation = null;
+            });
+
+            // Animate numbers
+            animateValue(netTotal, 0, 40198, 2000, '₡');
+            animateValue(ccssTotal, 0, 4802, 2000, '₡');
+            // Hours is a bit different because of the 'h' and decimal
+            let hStart = 0;
+            let hEnd = 18.00;
+            const hStep = (timestamp) => {
+                if (!animateValue.hStartTS) animateValue.hStartTS = timestamp;
+                const progress = Math.min((timestamp - animateValue.hStartTS) / 2000, 1);
+                const val = (progress * (hEnd - hStart) + hStart).toFixed(2);
+                hoursTotal.innerHTML = val + 'h';
+                if (progress < 1) {
+                    window.requestAnimationFrame(hStep);
+                } else {
+                    animateValue.hStartTS = null;
+                }
+            };
+            window.requestAnimationFrame(hStep);
+        }
+
+        // Run animation when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCalculatorDemo();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.calculator-mockup'));
+
+        // Repeat every 10 seconds for flavor
+        setInterval(() => {
+            if (document.visibilityState === 'visible') {
+                runCalculatorDemo();
+            }
+        }, 8000);
     </script>
 </body>
 
