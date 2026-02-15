@@ -868,6 +868,42 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    .calculator-mockup.full-design {
+        height: auto;
+        min-height: auto;
+        flex-direction: column;
+    }
+
+    .calc-sidebar {
+        display: none;
+    }
+
+    .calc-header-v2 {
+        padding: 1.5rem;
+    }
+
+    .calc-content {
+        padding: 1.5rem;
+    }
+
+    .calc-table th,
+    .calc-table td {
+        padding: 0.75rem 0.4rem;
+        font-size: 0.75rem;
+    }
+
+    .calc-summary-v2 {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .summary-box .val {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 600px) {
     .hero h1 {
         font-size: 2.8rem;
