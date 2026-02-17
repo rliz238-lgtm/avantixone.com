@@ -1004,3 +1004,154 @@ footer {
         padding: 1.5rem;
     }
 }
+/* Marcador Mockup Section */
+.marker-mockup {
+    background: #F3F4F6;
+    border-radius: 24px;
+    padding: 2rem;
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.marker-phone {
+    background: white;
+    border-radius: 30px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.marker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.marker-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #F9FAFB;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.camera-preview {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #E5E7EB;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 2px solid #E2E8F0;
+}
+
+.camera-preview::before {
+    content: '\f030';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 3rem;
+    color: #9CA3AF;
+}
+
+.camera-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border: 2px dashed rgba(255,255,255,0.5);
+    border-radius: 50%;
+}
+
+.selfie-btn {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #E2E8F0;
+    background: #F9FAFB;
+    border-radius: 12px;
+    font-weight: 700;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.selfie-btn:hover {
+    background: #F3F4F6;
+}
+
+.marker-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.action-btn {
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.action-btn.entrada {
+    background: #10B981;
+    color: white;
+}
+
+.action-btn.salida {
+    background: #FEE2E2;
+    color: #EF4444;
+}
+
+.gps-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.gps-dot {
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@media (max-width: 768px) {
+    .marker-mockup {
+        margin-top: 3rem;
+    }
+}
