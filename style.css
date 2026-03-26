@@ -1155,3 +1155,246 @@ footer {
         margin-top: 3rem;
     }
 }
+
+/* ===== CORPORATE PAGE STYLES (v2.5) ===== */
+
+/* Hero Corporate */
+.hero-corporate .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: -2px;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+/* Products Section */
+.products-section {
+    background: white;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+}
+
+.product-card-header {
+    padding: 2.5rem;
+    text-align: center;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: var(--bg-light);
+}
+
+.product-card-header i {
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.product-card-body {
+    padding: 2rem;
+}
+
+.product-card-body h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.product-card-body p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Product Features List */
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.product-features li {
+    padding: 0.4rem 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-main);
+}
+
+.product-features li i {
+    color: var(--primary);
+    background: rgba(124, 58, 237, 0.1);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.live {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.status-badge.coming-soon {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.status-badge.in-dev {
+    background: #DBEAFE;
+    color: #1E40AF;
+}
+
+/* CTA Button Outline */
+.cta-button-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 100px;
+    transition: var(--transition);
+    border: 2px solid var(--primary);
+    cursor: pointer;
+}
+
+.cta-button-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.3);
+}
+
+.cta-button-outline.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Industries Section */
+.industries-section {
+    background: var(--bg-light);
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.industry-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+}
+
+.industry-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.industry-card:hover img {
+    transform: scale(1.05);
+}
+
+.industry-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 2rem 1.5rem 1.5rem;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+/* Corporate Responsive */
+@media (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .industries-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-corporate .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .industries-grid .industry-card:last-child {
+        grid-column: span 2;
+    }
+}
