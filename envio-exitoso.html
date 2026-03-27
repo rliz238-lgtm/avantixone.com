@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Enviado | Avantix One</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css?v=2.5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .success-container {
+            padding: 12rem 2rem 6rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark, #4338ca));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .success-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .success-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-container p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .success-actions a {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .success-actions .cta-button {
+            display: inline-block;
+        }
+
+        .success-actions .secondary-btn {
+            background: white;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .success-actions .secondary-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="header-nav">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">
+                <img src="img/avatix_one_circle.png" alt="Avantix One" class="logo-img">
+            </a>
+            <div class="desktop-nav">
+                <a href="index.html#productos">Productos</a>
+                <a href="index.html#nosotros">Nosotros</a>
+                <a href="soporte.html">Soporte</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="success-container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1><span class="gradient-text">Mensaje enviado</span></h1>
+            <p>Gracias por escribirnos. Hemos recibido tu mensaje y nuestro equipo te responderá a la brevedad posible.</p>
+            <div class="success-actions">
+                <a href="index.html" class="cta-button">Volver al inicio</a>
+                <a href="soporte.html" class="secondary-btn">Enviar otro mensaje</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="img/avatix_one_circle.png" alt="Avantix One" style="height: 50px; margin-bottom: 2rem;">
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Avantix One &copy; 2026 | info@avantixone.com
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; font-weight: 600;">
+                <a href="index.html">Inicio</a>
+                <a href="planillas.html">Planillas</a>
+                <a href="terminos.html">Términos</a>
+                <a href="privacidad.html">Privacidad</a>
+            </div>
+        </div>
+    </footer>
+    <script src="cookies.js"></script>
+</body>
+
+</html>

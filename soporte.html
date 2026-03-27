@@ -132,7 +132,10 @@
 
             <div class="support-form">
                 <h2 style="margin-bottom: 2rem; text-align: center;">Escríbenos directamente</h2>
-                <form action="https://formspree.io/f/info@avantixone.com" method="POST">
+                <form action="https://formsubmit.co/info@avantixone.com" method="POST">
+                    <input type="hidden" name="_next" value="https://avantixone.com/envio-exitoso.html">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="text" name="_honey" style="display:none">
                     <div class="form-group">
                         <label for="name">Nombre completo</label>
                         <input type="text" id="name" name="name" placeholder="Tu nombre" required>
@@ -143,7 +146,7 @@
                     </div>
                     <div class="form-group">
                         <label for="subject">Asunto</label>
-                        <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" required>
+                        <input type="text" id="subject" name="_subject" placeholder="¿En qué podemos ayudarte?" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Mensaje</label>
