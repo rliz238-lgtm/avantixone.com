@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /builder.html
+Disallow: /envio-exitoso.html
+
+Sitemap: https://avantixone.com/sitemap.xml
