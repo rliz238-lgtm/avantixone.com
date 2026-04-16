@@ -1401,32 +1401,27 @@ footer {
 
 /* ===== CONVERSION IMPROVEMENTS (v3.0) ===== */
 
-/* Hero Grid Layout */
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    text-align: left;
+/* Hero with Background Image */
+.hero-with-bg {
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.hero-with-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('img/hero-dashboard.png') center 70% / 60% no-repeat;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.hero-grid .hero-btns {
-    margin-top: 0.5rem;
-}
-
-.hero-grid h1 {
-    margin: 0;
-}
-
-.hero-grid p {
-    margin: 0;
-    text-align: left;
+.hero-bg-overlay {
+    display: none;
 }
 
 .hero-badge {
@@ -1439,30 +1434,19 @@ footer {
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 700;
-    width: fit-content;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    max-width: 580px;
-    filter: drop-shadow(0 20px 40px rgba(124, 58, 237, 0.15));
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    margin: 0 auto 1rem;
 }
 
 .hero-trust {
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 .trust-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.85rem;
@@ -1481,6 +1465,12 @@ footer {
     padding: 4rem 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+}
+
+.social-proof-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--padding-container);
 }
 
 .proof-stats-grid {
@@ -1531,7 +1521,7 @@ footer {
 }
 
 .cta-trust span {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     color: rgba(255, 255, 255, 0.6);
@@ -1544,6 +1534,10 @@ footer {
 }
 
 /* Product card image improvements */
+.product-card-header {
+    background: white !important;
+}
+
 .product-card-header img {
     border-radius: 12px;
     transition: var(--transition);
@@ -1553,33 +1547,16 @@ footer {
     transform: scale(1.05);
 }
 
-/* Responsive: Hero Grid */
+/* Responsive */
 @media (max-width: 768px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-content {
-        align-items: center;
-    }
-
-    .hero-grid p {
-        text-align: center;
-    }
-
-    .hero-btns > div {
-        justify-content: center;
+    .hero-with-bg::before {
+        background-size: 90%;
     }
 
     .hero-trust {
-        justify-content: center;
-    }
-
-    .hero-image img {
-        max-width: 400px;
-        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     .proof-stats-grid {
