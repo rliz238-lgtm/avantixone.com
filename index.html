@@ -1,402 +1,2027 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avantix One | Software empresarial para Costa Rica</title>
-    <meta name="description"
-        content="Avantix One desarrolla software empresarial para Costa Rica. Planillas, facturación electrónica y punto de venta para restaurantes. Tecnología accesible para tu negocio.">
-    <link rel="canonical" href="https://avantixone.com/">
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://avantixone.com/">
-    <meta property="og:title" content="Avantix One | Software empresarial para Costa Rica">
-    <meta property="og:description" content="Planillas, facturación electrónica y punto de venta para restaurantes. Tecnología accesible para tu negocio.">
-    <meta property="og:image" content="https://avantixone.com/img/avatix_one_circle.png">
-    <meta property="og:locale" content="es_CR">
-    <meta property="og:site_name" content="Avantix One">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Avantix One | Software empresarial para Costa Rica">
-    <meta name="twitter:description" content="Planillas, facturación electrónica y punto de venta para restaurantes. Tecnología accesible para tu negocio.">
-    <meta name="twitter:image" content="https://avantixone.com/img/avatix_one_circle.png">
-    <!-- SEO adicional -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Avantix One">
-    <meta name="keywords" content="software empresarial Costa Rica, planillas Costa Rica, facturación electrónica, punto de venta restaurantes, CCSS, nómina Costa Rica">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=3.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WHJSDNF4');</script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4C8RWV6HC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-G4C8RWV6HC');
-    </script>
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1619126312859475');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1619126312859475&ev=PageView&noscript=1" /></noscript>
-    <!-- Datos estructurados -->
-    <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avantix One | Software empresarial para Costa Rica</title>
+<meta name="description" content="POS, planillas, facturación electrónica, menú digital y más. Una sola plataforma para tu negocio en Costa Rica.">
+<link rel="canonical" href="https://avantixone.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://avantixone.com/">
+<meta property="og:title" content="Avantix One | Software empresarial para Costa Rica">
+<meta property="og:description" content="Aplicaciones de software para operar restaurantes, planillas, facturación y hospedajes en Costa Rica.">
+<meta property="og:image" content="https://avantixone.com/img/avatix_one_circle.png">
+<meta property="og:locale" content="es_CR">
+<meta property="og:site_name" content="Avantix One">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Avantix One | Software empresarial para Costa Rica">
+<meta name="twitter:description" content="POS, menú digital, planillas, facturación y hospedajes para negocios en Costa Rica.">
+<meta name="twitter:image" content="https://avantixone.com/img/avatix_one_circle.png">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Avantix One">
+<meta name="keywords" content="software empresarial Costa Rica, POS restaurantes Costa Rica, menu digital Costa Rica, planillas Costa Rica, facturación electrónica, facturación electrónica v4.4, CCSS Costa Rica, ICT 3% hospedajes, Hacienda Costa Rica">
+<meta name="theme-color" content="#F5F4EF">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   AVANTIX ONE · Moderno Bold
+   - Bold sans-serif (Manrope 800)
+   - Cream off-white background
+   - Violet brand accent
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #F5F4EF;
+  --bg-2:       #ECEAE2;
+  --bg-3:       #E2DFD3;
+  --ink:        #0E0E18;
+  --ink-2:      #1A1A26;
+  --ink-soft:   #5A5A66;
+  --ink-faint:  #8B8B95;
+  --line:       #DDD9CC;
+  --line-soft:  #E8E5DA;
+  --violet:     #6B5BFD;
+  --violet-2:   #5848E0;
+  --violet-3:   #4636C0;
+  --violet-soft:#E8E5FF;
+  --lime:       #C6F23A;
+  --coral:      #FF8056;
+  --paper:      #FAFAF6;
+
+  --ease:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  --max:        1320px;
+  --pad:        clamp(20px, 4vw, 40px);
+
+  --font:       'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:  'JetBrains Mono', ui-monospace, Menlo, monospace;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+::selection { background: var(--violet); color: #fff; }
+
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+  color: var(--ink);
+}
+h1 {
+  font-size: clamp(56px, 9vw, 152px);
+  font-weight: 800;
+  letter-spacing: -0.052em;
+}
+h2 {
+  font-size: clamp(44px, 6vw, 92px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+h3 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+h4 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+.lead {
+  font-size: clamp(18px, 1.4vw, 21px);
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 58ch;
+  letter-spacing: -0.005em;
+}
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.kicker::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: var(--violet);
+  border-radius: 2px;
+}
+.kicker.solo::before { display: none; }
+.kicker .num { color: var(--violet); font-weight: 700; }
+
+p { color: var(--ink-soft); font-size: 16px; line-height: 1.55; font-weight: 500; }
+
+/* ===== NAV ===== */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms;
+}
+.nav.scrolled { border-bottom-color: var(--line); background: rgba(245,244,239,0.95); backdrop-filter: blur(10px); }
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.nav-logo {
+  display: inline-flex; align-items: center;
+  height: 36px;
+}
+.nav-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+.footer-brand .nav-logo { height: 42px; }
+.nav-links { display: flex; gap: 30px; font-size: 14px; font-weight: 600; }
+.nav-links a { color: var(--ink-2); transition: color 150ms; }
+.nav-links a:hover { color: var(--violet); }
+.nav-cta { display: flex; align-items: center; gap: 16px; }
+.nav-link-sub { font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.nav-link-sub:hover { color: var(--violet); }
+.nav-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--ink); color: var(--paper);
+  font-size: 14px; font-weight: 700;
+  padding: 11px 18px; border-radius: 999px;
+  transition: background 150ms;
+}
+.nav-btn:hover { background: var(--violet); }
+.menu-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  align-items: center; justify-content: center;
+  border-radius: 12px;
+  color: var(--ink);
+}
+.menu-toggle svg { width: 24px; height: 24px; }
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-link-sub { display: none; }
+  .menu-toggle { display: inline-flex; }
+}
+
+/* Mobile panel */
+.mobile-panel {
+  display: none;
+  position: fixed; inset: 72px 0 0;
+  background: var(--bg);
+  z-index: 90;
+  padding: 32px var(--pad) 40px;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid var(--line);
+}
+.mobile-panel.open { display: flex; }
+.mobile-panel a {
+  padding: 16px 4px;
+  font-size: 20px; font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-soft);
+}
+.mobile-panel a:last-of-type { border-bottom: 0; }
+.mobile-panel .m-cta {
+  margin-top: 18px;
+  background: var(--ink); color: var(--paper);
+  padding: 16px 22px;
+  border-radius: 999px;
+  text-align: center;
+  border-bottom: 0;
+  font-size: 15px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 28px; border-radius: 999px;
+  font-size: 15px; font-weight: 700;
+  border: 1px solid transparent;
+  transition: all 200ms var(--ease);
+  white-space: nowrap;
+}
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--violet); transform: translateY(-1px); }
+.btn-violet { background: var(--violet); color: var(--paper); }
+.btn-violet:hover { background: var(--violet-2); transform: translateY(-1px); box-shadow: 0 12px 30px -10px var(--violet); }
+.btn-ghost {
+  background: transparent; color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.btn-light { background: var(--paper); color: var(--ink); border-color: var(--line); }
+.btn-light:hover { background: var(--bg-2); }
+.btn .arr { width: 14px; height: 14px; transition: transform 200ms; }
+.btn:hover .arr { transform: translateX(2px); }
+
+/* ===== Section base ===== */
+.section { padding: clamp(80px, 10vw, 140px) var(--pad); }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+.section-head { max-width: 880px; margin-bottom: 64px; display: flex; flex-direction: column; gap: 18px; }
+.section-head h2 { max-width: 16ch; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: clamp(40px, 6vw, 80px) var(--pad) clamp(80px, 10vw, 120px);
+  position: relative;
+}
+.hero-inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.hero-meta {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 8px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-2);
+  margin-bottom: 36px;
+}
+.hero-meta .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 4px oklch(0.85 0.18 130 / 0.3);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px oklch(0.85 0.18 130 / 0.3); }
+  50% { box-shadow: 0 0 0 6px oklch(0.85 0.18 130 / 0.15); }
+}
+.hero-meta .v { color: var(--ink-faint); }
+
+.hero h1 {
+  max-width: 16ch;
+  margin-bottom: 32px;
+}
+.hero h1 .vio { color: var(--violet); }
+
+.hero-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: end;
+  margin-top: 40px;
+}
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+.hero-actions { display: flex; flex-direction: column; gap: 28px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-trust {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.hero-trust .it { display: inline-flex; align-items: center; gap: 8px; }
+.hero-trust .it::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--violet);
+  border-radius: 50%;
+}
+
+.hero-stats {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.hero-stat {
+  background: var(--bg);
+  padding: 20px 22px;
+}
+.hero-stat .num {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  line-height: 1;
+}
+.hero-stat .lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
+.hero-product {
+  margin-top: 80px;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--ink);
+  aspect-ratio: 16/9;
+  max-height: 720px;
+  box-shadow: 0 60px 100px -40px rgba(14,14,24,0.4);
+}
+.hero-product img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-product-tag {
+  position: absolute;
+  top: 24px; left: 24px;
+  padding: 8px 14px;
+  background: rgba(14,14,24,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.hero-product-tag .d {
+  width: 6px; height: 6px;
+  background: var(--lime);
+  border-radius: 50%;
+}
+
+/* ============================================
+   INDUSTRIES
+   ============================================ */
+.industries {
+  padding: clamp(80px, 10vw, 140px) var(--pad);
+  background: var(--bg);
+}
+.industries-head {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 60px; align-items: end;
+  margin-bottom: 48px;
+  max-width: var(--max);
+  margin-left: auto; margin-right: auto;
+}
+@media (max-width: 800px) { .industries-head { grid-template-columns: 1fr; gap: 24px; } }
+.industries-head h2 { max-width: 14ch; }
+
+.ind-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 900px) { .ind-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .ind-grid { grid-template-columns: 1fr; } }
+
+.ind-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  cursor: pointer;
+  background: var(--bg-2);
+}
+.ind-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+.ind-card:hover img { transform: scale(1.04); }
+.ind-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(14,14,24,0) 35%, rgba(14,14,24,0.85) 100%);
+  pointer-events: none;
+}
+.ind-card-body {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 22px 24px;
+  z-index: 2;
+  display: flex; flex-direction: column; gap: 6px;
+  color: #fff;
+}
+.ind-card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 6px;
+}
+.ind-card-name {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.ind-card-meta {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  margin-top: 6px;
+}
+.ind-card-arr {
+  position: absolute; top: 20px; right: 20px;
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  transition: all 200ms;
+  z-index: 2;
+}
+.ind-card:hover .ind-card-arr { background: var(--violet); border-color: var(--violet); transform: rotate(-45deg); }
+
+/* ============================================
+   APPS bento
+   ============================================ */
+.apps {
+  padding: clamp(80px, 10vw, 140px) var(--pad);
+  background: var(--bg);
+}
+.apps-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+.app-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 200ms var(--ease);
+  min-height: 380px;
+}
+.app-card:hover { border-color: var(--ink); transform: translateY(-3px); }
+.app-card .app-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.app-card .app-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--bg-2);
+  align-self: flex-start;
+  font-weight: 600;
+}
+.app-status .d { width: 6px; height: 6px; border-radius: 50%; }
+.app-status.live { color: oklch(0.50 0.15 150); }
+.app-status.live .d { background: oklch(0.55 0.15 150); }
+.app-status.beta { color: var(--violet); background: var(--violet-soft); }
+.app-status.beta .d { background: var(--violet); }
+.app-status.soon { color: var(--coral); }
+.app-status.soon .d { background: var(--coral); }
+
+.app-card h3 { letter-spacing: -0.035em; line-height: 1; margin-top: 4px; }
+.app-card .desc { color: var(--ink-soft); font-size: 15px; line-height: 1.5; max-width: 38ch; }
+.app-card.col-4 h3 {
+  min-height: 3em;
+}
+.app-card.col-4 .desc {
+  min-height: 6em;
+}
+
+.app-card .app-foot {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex; align-items: center; justify-content: flex-end;
+  border-top: 1px dashed var(--line);
+}
+.app-card .app-foot .price {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+.app-card .app-foot .price b {
+  color: var(--ink);
+  font-weight: 700;
+}
+.app-card .app-arr {
+  width: 40px; height: 40px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 200ms;
+  flex-shrink: 0;
+}
+.app-card:hover .app-arr { background: var(--violet); transform: rotate(-45deg); }
+
+.app-card.feat {
+  grid-column: span 7;
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  min-height: 460px;
+}
+.app-card.feat h3, .app-card.feat .desc { color: var(--paper); }
+.app-card.feat .desc { color: rgba(250,250,246,0.7); }
+.app-card.feat .app-num { color: rgba(250,250,246,0.5); }
+.app-card.feat .app-foot { border-color: rgba(250,250,246,0.18); }
+.app-card.feat .app-foot .price { color: rgba(250,250,246,0.55); }
+.app-card.feat .app-foot .price b { color: var(--paper); }
+.app-card.feat .app-arr { background: var(--violet); color: #fff; }
+.app-card.feat:hover .app-arr { background: var(--paper); color: var(--ink); }
+.app-card.feat .app-status { background: rgba(255,255,255,0.08); color: var(--lime); }
+.app-card.feat .app-status .d { background: var(--lime); }
+
+.app-card.col-5 { grid-column: span 5; }
+.app-card.col-4 { grid-column: span 4; }
+.app-card.col-6 { grid-column: span 6; }
+.app-card.col-8 { grid-column: span 8; }
+
+@media (max-width: 900px) {
+  .app-card, .app-card.feat, .app-card.col-5, .app-card.col-4, .app-card.col-6, .app-card.col-8 {
+    grid-column: 1 / -1;
+  }
+  .app-card.col-4 h3,
+  .app-card.col-4 .desc {
+    min-height: 0;
+  }
+}
+
+.app-card .app-vis {
+  margin: 8px -8px -8px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  flex: 1;
+  min-height: 160px;
+  position: relative;
+}
+.app-card.col-4 .app-vis {
+  flex: 0 0 clamp(190px, 18vw, 235px);
+  min-height: 0;
+}
+.app-card.col-8 .app-vis {
+  flex: 0 0 clamp(220px, 22vw, 300px);
+  min-height: 0;
+}
+.app-card.feat .app-vis {
+  background: var(--ink-2);
+  border-color: rgba(255,255,255,0.1);
+}
+.app-card .app-vis img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+@media (max-width: 900px) {
+  .app-card.col-4 .app-vis {
+    flex-basis: clamp(210px, 42vw, 320px);
+  }
+  .app-card.col-8 .app-vis {
+    flex-basis: clamp(220px, 44vw, 340px);
+  }
+}
+
+.vis-tile {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  padding: 16px;
+  gap: 10px;
+}
+.vis-tile .pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  align-self: flex-start;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.app-card.feat .vis-tile .pill {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+}
+
+.vis-stat {
+  display: flex; flex-direction: column; gap: 4px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  flex: 1;
+}
+.app-card.feat .vis-stat { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+.vis-stat .lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+.vis-stat .val { font-size: 26px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.app-card.feat .vis-stat .lbl { color: rgba(255,255,255,0.5); }
+.app-card.feat .vis-stat .val { color: var(--paper); }
+
+/* ============================================
+   PLATFORM
+   ============================================ */
+.platform {
+  padding: clamp(80px, 10vw, 140px) var(--pad);
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+.platform h2, .platform h3 { color: var(--paper); }
+.platform .lead { color: rgba(250,250,246,0.65); }
+.platform .kicker { color: rgba(250,250,246,0.5); }
+.platform .kicker::before { background: var(--violet); }
+.platform .kicker .num { color: var(--violet); }
+.platform-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+
+.platform::before {
+  content: '';
+  position: absolute;
+  width: 800px; height: 800px;
+  border-radius: 50%;
+  background: var(--violet);
+  filter: blur(180px);
+  opacity: 0.2;
+  top: -200px; right: -200px;
+  pointer-events: none;
+}
+
+.platform-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 60px;
+}
+@media (max-width: 900px) { .platform-grid { grid-template-columns: 1fr; } }
+.pl-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: all 200ms;
+}
+.pl-card:hover { border-color: var(--violet); background: rgba(107,91,253,0.06); }
+.pl-card .ic {
+  width: 44px; height: 44px;
+  background: var(--violet);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+}
+.pl-card .ic svg { width: 22px; height: 22px; }
+.pl-card h4 { color: var(--paper); }
+.pl-card p { color: rgba(250,250,246,0.62); font-size: 14px; }
+.pl-card .flows {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255,255,255,0.15);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.pl-card .flows .row {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(250,250,246,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.pl-card .flows .row .a { color: var(--violet); flex-shrink: 0; }
+
+/* ============================================
+   MARQUEE
+   ============================================ */
+.marquee {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  overflow: hidden;
+  position: relative;
+}
+.marquee::before, .marquee::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none;
+}
+.marquee::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+.marquee::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+.marquee-track {
+  display: flex; gap: 56px;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+@keyframes scroll { to { transform: translateX(-50%); } }
+.marquee-item {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.marquee-item .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+.marquee-item.sep { width: 6px; height: 6px; border-radius: 50%; background: var(--violet); padding: 0; }
+
+/* ============================================
+   STATS
+   ============================================ */
+.stats {
+  padding: clamp(80px, 10vw, 120px) var(--pad);
+  background: var(--bg);
+}
+.stats-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 800px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } }
+.stat {
+  padding: 36px 28px 0;
+  border-left: 1px solid var(--line);
+}
+.stat:first-child { border-left: 0; padding-left: 0; }
+@media (max-width: 800px) {
+  .stat { padding: 28px 16px 0; }
+  .stat:nth-child(odd) { border-left: 0; padding-left: 0; }
+}
+.stat .num {
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  line-height: 0.95;
+  display: flex; align-items: baseline; gap: 4px;
+}
+.stat .num .suf {
+  font-size: 0.35em;
+  color: var(--violet);
+  font-weight: 800;
+}
+.stat .lbl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  margin-top: 18px;
+  max-width: 200px;
+}
+
+/* ============================================
+   QUOTES
+   ============================================ */
+.quotes-inner { max-width: var(--max); margin: 0 auto; }
+.quotes-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 48px;
+}
+@media (max-width: 800px) { .quotes-grid { grid-template-columns: 1fr; } }
+.q-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 36px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.q-card.dark {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+.q-card .body {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.q-card.dark .body { color: var(--paper); }
+.q-card .body b { color: var(--violet); font-weight: 700; }
+.q-card .by {
+  display: flex; align-items: center; gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  margin-top: auto;
+}
+.q-card.dark .by { border-color: rgba(255,255,255,0.15); }
+.q-card .by .av {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px;
+  color: var(--ink);
+}
+.q-card.dark .by .av { background: var(--violet); color: #fff; }
+.q-card .by .nm { font-weight: 700; font-size: 15px; }
+.q-card.dark .by .nm { color: var(--paper); }
+.q-card .by .ro {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.q-card.dark .by .ro { color: rgba(250,250,246,0.55); }
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing-tabs {
+  display: inline-flex; gap: 4px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 4px;
+  border-radius: 999px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pricing-tab {
+  font-size: 14px; font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  transition: all 150ms;
+}
+.pricing-tab.active { background: var(--ink); color: var(--paper); }
+.pricing-tab:hover:not(.active) { color: var(--ink); }
+
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+.pricing-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 18px;
+  position: relative;
+}
+.pricing-card.feat { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.pricing-card.feat .nm,
+.pricing-card.feat .price,
+.pricing-card.feat .price .suf { color: var(--paper); }
+.pricing-card.feat .desc, .pricing-card.feat .features li { color: rgba(250,250,246,0.72); }
+.pricing-card.feat .features li::before { background: var(--violet); color: #fff; }
+.pricing-card.feat .pricing-btn { background: var(--violet); color: var(--paper); }
+.pricing-card.feat .pricing-btn:hover { background: var(--paper); color: var(--ink); }
+.badge {
+  position: absolute; top: -12px; left: 28px;
+  font-family: var(--font-mono); font-size: 10px;
+  padding: 6px 12px;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  border-radius: 999px;
+  background: var(--violet); color: #fff;
+  font-weight: 700;
+}
+.pricing-card .nm {
+  font-size: 16px; font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.pricing-card .price {
+  display: flex; align-items: baseline; gap: 4px;
+}
+.pricing-card .price .num {
+  font-size: 56px; font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+.pricing-card .price .suf {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 500;
+}
+.pricing-card .desc { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+.pricing-card .features {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+  padding-top: 18px; border-top: 1px solid var(--line);
+}
+.pricing-card.feat .features { border-color: rgba(250,250,246,0.15); }
+.pricing-card .features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--ink-2);
+  line-height: 1.4; font-weight: 500;
+}
+.pricing-card .features li::before {
+  content: '';
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--violet-soft);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B5BFD' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 11px;
+}
+.pricing-card.feat .features li::before {
+  background-color: rgba(255,255,255,0.12);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+}
+.pricing-btn {
+  margin-top: auto;
+  padding: 14px;
+  border-radius: 999px;
+  background: var(--ink); color: var(--paper);
+  font-weight: 700; font-size: 14px;
+  transition: background 150ms;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+}
+.pricing-btn:hover { background: var(--violet); }
+
+/* ============================================
+   RESOURCES / BLOG
+   ============================================ */
+.resources {
+  padding: clamp(80px, 10vw, 140px) var(--pad);
+  background: var(--bg);
+}
+.resources-inner { max-width: var(--max); margin: 0 auto; }
+.resources-head {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 60px; align-items: end;
+  margin-bottom: 48px;
+}
+@media (max-width: 800px) { .resources-head { grid-template-columns: 1fr; gap: 24px; } }
+.resources-head h2 { max-width: 14ch; }
+.resources-head .head-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 700;
+  color: var(--ink);
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--violet);
+  align-self: flex-start;
+  transition: gap 200ms var(--ease);
+  margin-top: 12px;
+}
+.resources-head .head-cta:hover { gap: 14px; color: var(--violet); }
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+.res-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: all 200ms var(--ease);
+  grid-column: span 4;
+  min-height: 340px;
+}
+.res-card:hover { border-color: var(--ink); transform: translateY(-3px); }
+.res-card.feat {
+  grid-column: span 12;
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  padding: 40px;
+  min-height: 360px;
+}
+.res-card.feat:hover { border-color: var(--violet); }
+@media (max-width: 900px) {
+  .res-card.feat { grid-template-columns: 1fr; }
+  .res-card { grid-column: 1 / -1; }
+}
+
+.res-card .res-head {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+}
+.res-cat {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--violet-soft);
+  color: var(--violet-3);
+  font-weight: 700;
+}
+.res-card.feat .res-cat { background: rgba(107,91,253,0.18); color: var(--lime); }
+.res-card.feat .res-cat .d { background: var(--lime); }
+.res-cat .d { width: 6px; height: 6px; border-radius: 50%; background: var(--violet); }
+.res-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+.res-card.feat .res-meta { color: rgba(250,250,246,0.5); }
+
+.res-card .res-body {
+  display: flex; flex-direction: column; gap: 12px;
+  flex: 1;
+}
+.res-card.feat .res-body { justify-content: center; }
+.res-card h3 {
+  font-size: clamp(22px, 2.2vw, 28px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  max-width: 22ch;
+}
+.res-card.feat h3 {
+  font-size: clamp(32px, 3.6vw, 52px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--paper);
+  max-width: 18ch;
+}
+.res-card .desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  max-width: 38ch;
+}
+.res-card.feat .desc { color: rgba(250,250,246,0.7); font-size: 16px; max-width: 44ch; }
+
+.res-card .res-foot {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px dashed var(--line);
+  gap: 12px;
+}
+.res-card.feat .res-foot { border-color: rgba(255,255,255,0.18); }
+.res-foot .read {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.res-card.feat .res-foot .read { color: rgba(250,250,246,0.6); }
+.res-foot .read b { color: var(--ink); font-weight: 700; }
+.res-card.feat .res-foot .read b { color: var(--paper); }
+.res-arr {
+  width: 40px; height: 40px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 200ms;
+  flex-shrink: 0;
+}
+.res-card:hover .res-arr { background: var(--violet); transform: rotate(-45deg); }
+.res-card.feat .res-arr { background: var(--violet); color: #fff; }
+.res-card.feat:hover .res-arr { background: var(--paper); color: var(--ink); }
+
+.res-card.feat .res-visual {
+  align-self: stretch;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  justify-content: space-between;
+  min-height: 220px;
+}
+.res-card.feat .res-visual .vt {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.7);
+}
+.res-card.feat .res-visual .vt .d { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); }
+.res-card.feat .res-visual .vstat {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+}
+.res-card.feat .res-visual .vstat-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.res-card.feat .res-visual .lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+.res-card.feat .res-visual .val {
+  font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
+  color: var(--paper); line-height: 1;
+}
+.res-card.feat .res-visual .val .v { color: var(--violet); }
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.cta-final {
+  padding: clamp(60px, 8vw, 120px) var(--pad);
+}
+.cta-card {
+  max-width: var(--max); margin: 0 auto;
+  background: var(--ink); color: var(--paper);
+  border-radius: 36px;
+  padding: clamp(60px, 8vw, 100px) clamp(40px, 6vw, 80px);
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 40px; align-items: center;
+}
+@media (max-width: 800px) { .cta-card { grid-template-columns: 1fr; } }
+.cta-card::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: var(--violet);
+  filter: blur(160px);
+  opacity: 0.5;
+  top: -100px; right: -100px;
+  pointer-events: none;
+}
+.cta-card > * { position: relative; z-index: 1; }
+.cta-card h2 { color: var(--paper); }
+.cta-card h2 .v { color: var(--violet); }
+.cta-card p { color: rgba(250,250,246,0.7); font-size: 18px; max-width: 500px; }
+.cta-card .btn-light { background: var(--paper); color: var(--ink); border: none; }
+.cta-card .btn-light:hover { background: var(--violet); color: var(--paper); }
+.cta-card .btn-ghost { border-color: rgba(255,255,255,0.3); color: var(--paper); }
+.cta-card .btn-ghost:hover { background: rgba(255,255,255,0.06); }
+
+.cta-side {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+}
+.cta-side .row {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px;
+  color: rgba(250,250,246,0.85);
+  font-weight: 500;
+}
+.cta-side .row .ic {
+  width: 30px; height: 30px;
+  background: var(--violet);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+.cta-side .row .ic svg { width: 14px; height: 14px; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer { padding: 80px var(--pad) 32px; }
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 56px;
+}
+@media (max-width: 800px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+.footer-brand { display: flex; flex-direction: column; gap: 18px; max-width: 320px; }
+.footer-brand p { font-size: 14px; color: var(--ink-soft); }
+.footer-col h5 {
+  font-family: var(--font-mono); font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--ink-faint); font-weight: 600;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: 14px; color: var(--ink-2); font-weight: 600; transition: color 150ms; }
+.footer-col ul a:hover { color: var(--violet); }
+
+.footer-mega {
+  max-width: var(--max); margin: 0 auto 48px;
+  font-size: clamp(60px, 12vw, 220px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.footer-mega .v { color: var(--violet); }
+
+.footer-bottom {
+  max-width: var(--max); margin: 0 auto;
+  padding-top: 24px; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--ink-faint);
+  text-transform: uppercase; letter-spacing: 0.12em;
+}
+.footer-bottom .right { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-bottom a:hover { color: var(--violet); }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* WhatsApp float */
+.wa-float {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 56px; height: 56px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 50;
+  box-shadow: 0 16px 32px -8px rgba(14,14,24,0.4);
+  transition: all 200ms;
+}
+.wa-float:hover { background: #1ebe57; transform: translateY(-2px); }
+.wa-float svg { width: 26px; height: 26px; }
+
+/* Cookie popup */
+.cookie-popup {
+  position: fixed; left: 16px; right: 16px; bottom: 16px;
+  max-width: 540px;
+  background: var(--ink); color: var(--paper);
+  border-radius: 20px;
+  padding: 20px 22px;
+  box-shadow: 0 24px 60px -20px rgba(14,14,24,0.5);
+  z-index: 200;
+  display: none;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.cookie-popup.active { display: block; }
+.cookie-popup h4 { color: var(--paper); margin-bottom: 6px; font-size: 16px; }
+.cookie-popup .cookie-text { color: rgba(250,250,246,0.7); }
+.cookie-popup .cookie-text a { color: var(--violet); font-weight: 700; text-decoration: underline; }
+.cookie-popup .cookie-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.cookie-popup .cookie-btn {
+  padding: 10px 18px; border-radius: 999px;
+  font-size: 13px; font-weight: 700;
+  background: var(--violet); color: #fff;
+}
+.cookie-popup .cookie-btn.secondary { background: rgba(255,255,255,0.08); color: var(--paper); }
+.cookie-popup .cookie-btn:hover { filter: brightness(1.08); }
+</style>
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+  w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+  var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+  j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-WHJSDNF4');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4C8RWV6HC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-G4C8RWV6HC');
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1619126312859475');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1619126312859475&ev=PageView&noscript=1" alt=""></noscript>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Avantix One",
+  "url":"https://avantixone.com",
+  "logo":"https://avantixone.com/img/avatix_one_circle.png",
+  "description":"Avantix One desarrolla software empresarial para Costa Rica. POS, planillas, facturación electrónica y menú digital.",
+  "email":"info@avantixone.com",
+  "telephone":"+506-6360-2181",
+  "address":{"@type":"PostalAddress","addressCountry":"CR"},
+  "contactPoint":{"@type":"ContactPoint","telephone":"+506-6360-2181","contactType":"customer service","availableLanguage":"Spanish"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Avantix One",
+  "url":"https://avantixone.com",
+  "description":"Software empresarial para Costa Rica",
+  "inLanguage":"es"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"Recursos Avantix One — guías para operar en Costa Rica",
+  "description":"Guías sobre facturación electrónica, planillas, CCSS, ICT y migración a POS en Costa Rica.",
+  "itemListElement":[
     {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Avantix One",
-        "url": "https://avantixone.com",
-        "logo": "https://avantixone.com/img/avatix_one_circle.png",
-        "description": "Avantix One desarrolla software empresarial para Costa Rica. Planillas, facturación electrónica y punto de venta.",
-        "email": "info@avantixone.com",
-        "telephone": "+506-6360-2181",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "CR"
-        },
-        "sameAs": [],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+506-6360-2181",
-            "contactType": "customer service",
-            "availableLanguage": "Spanish"
-        }
-    }
-    </script>
-    <script type="application/ld+json">
+      "@type":"ListItem",
+      "position":1,
+      "url":"https://avantixone.com/recursos/facturacion-electronica-v4-4-costa-rica/",
+      "name":"Facturación Electrónica v4.4 en Costa Rica: guía completa 2026"
+    },
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Avantix One",
-        "url": "https://avantixone.com",
-        "description": "Software empresarial para Costa Rica",
-        "inLanguage": "es"
+      "@type":"ListItem",
+      "position":2,
+      "url":"https://avantixone.com/recursos/calculo-planillas-ccss-costa-rica/",
+      "name":"Cálculo de planillas y CCSS en Costa Rica: paso a paso 2026"
+    },
+    {
+      "@type":"ListItem",
+      "position":3,
+      "url":"https://avantixone.com/recursos/impuesto-ict-3-hospedajes-airbnb/",
+      "name":"Impuesto ICT 3%: cuándo aplica para hoteles, Airbnb y cabinas"
+    },
+    {
+      "@type":"ListItem",
+      "position":4,
+      "url":"https://avantixone.com/recursos/migrar-de-excel-a-pos-restaurantes/",
+      "name":"Cómo migrar de Excel a un POS: 5 pasos para sodas y restaurantes"
     }
-    </script>
+  ]
+}
+</script>
 </head>
-
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJSDNF4" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJSDNF4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Navbar -->
-    <nav class="header-nav">
-        <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <a href="index.html" class="logo">
-                <img src="img/avatix_one_circle.png" alt="Avantix One" class="logo-img">
-            </a>
-            <div class="desktop-nav">
-                <a href="#productos">Productos</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="soporte.html">Soporte</a>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Avantix One">
+      <img src="img/avatix_one_circle.png" alt="Avantix One">
+    </a>
+    <div class="nav-links">
+      <a href="#apps">Aplicaciones</a>
+      <a href="#industrias">Industrias</a>
+      <a href="#plataforma">Plataforma</a>
+      <a href="#recursos">Recursos</a>
+      <a href="soporte.html">Soporte</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://fe.avantixone.com/login" class="nav-link-sub">Iniciar sesión</a>
+      <a href="https://wa.me/50663602181" class="nav-btn" target="_blank" rel="noopener">Empezar →</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
 
-    <!-- Mobile Nav -->
-    <div class="mobile-nav-overlay">
-        <nav class="mobile-nav">
-            <button class="close-menu" aria-label="Cerrar menú">&times;</button>
-            <a href="#productos" class="mobile-link">Productos</a>
-            <a href="#nosotros" class="mobile-link">Nosotros</a>
-            <a href="soporte.html" class="mobile-link">Soporte</a>
-        </nav>
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#apps">Aplicaciones</a>
+  <a href="#industrias">Industrias</a>
+  <a href="#plataforma">Plataforma</a>
+  <a href="#recursos">Recursos</a>
+  <a href="soporte.html">Soporte</a>
+  <a href="https://fe.avantixone.com/login">Iniciar sesión</a>
+  <a href="https://wa.me/50663602181" class="m-cta" target="_blank" rel="noopener">Hablar con ventas →</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-meta">
+      <span class="dot"></span>
+      <span>Activo en Costa Rica</span>
+      <span class="v">·</span>
+      <span>v3.0 · 2026</span>
     </div>
 
-    <!-- Hero -->
-    <header class="hero hero-corporate hero-with-bg">
-        <div class="hero-bg-overlay"></div>
-        <div class="container" style="position: relative; z-index: 2;">
-            <span class="hero-badge"><i class="fas fa-rocket"></i> Software empresarial #1 en Costa Rica</span>
-            <h1>Construimos software que <span class="gradient-text">automatiza tu negocio.</span></h1>
-            <p>Planillas, facturación electrónica y punto de venta. Todo lo que tu empresa necesita en un solo lugar.</p>
-            <div class="hero-btns">
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                    <a href="#productos" class="cta-button"><i class="fas fa-arrow-right"></i> Ver Productos</a>
-                    <a href="https://wa.me/50663602181" target="_blank" class="cta-button-outline"><i class="fab fa-whatsapp"></i> Hablar con ventas</a>
-                </div>
-            </div>
-            <div class="hero-trust">
-                <span class="trust-item"><i class="fas fa-check-circle"></i> 7 días gratis</span>
-                <span class="trust-item"><i class="fas fa-check-circle"></i> Sin tarjeta de crédito</span>
-                <span class="trust-item"><i class="fas fa-check-circle"></i> Soporte en español</span>
-            </div>
+    <h1>
+      Software<br>
+      empresarial para<br>
+      <span class="vio">negocios ticos.</span>
+    </h1>
+
+    <div class="hero-grid">
+      <div class="hero-actions">
+        <p class="lead">
+          POS para restaurantes, planillas, facturación electrónica, menú digital
+          y facturación para hospedajes. Aplicaciones especializadas, hechas en
+          Costa Rica.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="btn btn-violet">
+            Hablar con ventas
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#apps" class="btn btn-ghost">Ver aplicaciones</a>
         </div>
+        <div class="hero-trust">
+          <span class="it">Hacienda v4.4</span>
+          <span class="it">Hecho en Costa Rica</span>
+          <span class="it">Soporte en español</span>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">v4.4</div>
+          <div class="lbl">Hacienda autorizado</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">CR</div>
+          <div class="lbl">Hecho en Costa Rica</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">24/7</div>
+          <div class="lbl">Soporte WhatsApp</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-product reveal">
+      <span class="hero-product-tag"><span class="d"></span>Avantix One · POS Restaurantes</span>
+      <img src="img/section-pos-restaurant-v2.png" alt="Avantix One POS para restaurantes" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="industries" id="industrias">
+  <div class="industries-head reveal">
+    <div>
+      <span class="kicker"><span class="num">01</span>&nbsp;Industrias</span>
+      <h2 style="margin-top:18px;">Para cada negocio<br>en Costa Rica.</h2>
+    </div>
+    <p class="lead">Desde una soda en barrio Escalante hasta una cadena de gimnasios en GAM. Configuramos Avantix One para tu industria — con plantillas, cuentas y reportes específicos.</p>
+  </div>
+
+  <div class="ind-grid">
+    <a href="https://pos.avantixone.com" target="_blank" rel="noopener" class="ind-card reveal">
+      <img src="img/industria-restaurantes-isometric.png" alt="Restaurantes y sodas" loading="lazy">
+      <span class="ind-card-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      <div class="ind-card-body">
+        <div class="ind-card-num">01 · Restaurantes y bares</div>
+        <div class="ind-card-name">Sodas, cafés,<br>restaurantes y bares</div>
+        <div class="ind-card-meta">POS · cocina · delivery · facturación</div>
+      </div>
+    </a>
+
+    <a href="planillas.html" class="ind-card reveal">
+      <img src="img/industria-oficinas-isometric.png" alt="Oficinas y servicios" loading="lazy">
+      <span class="ind-card-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      <div class="ind-card-body">
+        <div class="ind-card-num">02 · Oficinas</div>
+        <div class="ind-card-name">PYMEs y<br>servicios</div>
+        <div class="ind-card-meta">Planillas · facturación · contabilidad</div>
+      </div>
+    </a>
+
+    <a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="ind-card reveal">
+      <img src="img/industria-clinicas-isometric.png" alt="Clínicas y consultorios" loading="lazy">
+      <span class="ind-card-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      <div class="ind-card-body">
+        <div class="ind-card-num">03 · Salud</div>
+        <div class="ind-card-name">Clínicas y<br>consultorios</div>
+        <div class="ind-card-meta">Citas · facturación · planillas</div>
+      </div>
+    </a>
+
+    <a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="ind-card reveal">
+      <img src="img/industria-gimnasios-isometric.png" alt="Gimnasios" loading="lazy">
+      <span class="ind-card-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      <div class="ind-card-body">
+        <div class="ind-card-num">04 · Fitness</div>
+        <div class="ind-card-name">Gimnasios y<br>estudios</div>
+        <div class="ind-card-meta">Membresías · cobros · accesos</div>
+      </div>
+    </a>
+
+    <a href="https://fe.avantixone.com/facturacion-airbnb" target="_blank" rel="noopener" class="ind-card reveal">
+      <img src="img/industria-airbnb-isometric.png" alt="Hospedajes" loading="lazy">
+      <span class="ind-card-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      <div class="ind-card-body">
+        <div class="ind-card-num">05 · Hospedaje</div>
+        <div class="ind-card-name">Hoteles, B&amp;B<br>y cabinas</div>
+        <div class="ind-card-meta">PMS · IVA + ICT · check-in</div>
+      </div>
+    </a>
+
+    <a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="ind-card reveal">
+      <img src="img/industria-construccion-isometric.png" alt="Construcción" loading="lazy">
+      <span class="ind-card-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      <div class="ind-card-body">
+        <div class="ind-card-num">06 · Construcción</div>
+        <div class="ind-card-name">Constructoras<br>y contratistas</div>
+        <div class="ind-card-meta">Proyectos · planillas · facturación</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== APPS — bento ===== -->
+<section class="apps" id="apps">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="num">02</span>&nbsp;Aplicaciones</span>
+      <h2>Aplicaciones. Una sola cuenta.</h2>
+      <p class="lead">Cada aplicación es completa en sí misma — y todas comparten clientes, empleados, productos y reportes.</p>
+    </div>
+
+    <div class="apps-grid">
+      <!-- Featured POS -->
+      <a href="https://pos.avantixone.com" target="_blank" rel="noopener" class="app-card feat reveal">
+        <div>
+          <div class="app-num">01 · POS Restaurantes</div>
+          <span class="app-status">●&nbsp;En vivo</span>
+        </div>
+        <h3>El sistema operativo<br>de tu restaurante.</h3>
+        <p class="desc">Punto de venta, pantalla de cocina, menú digital con QR y delivery — todo sincronizado en tiempo real. Entrá ahora a pos.avantixone.com.</p>
+        <div class="app-vis">
+          <img src="img/app-pos-restaurante-generated-v1.png" alt="Sistema operativo Avantix One para restaurantes" loading="lazy" style="object-position: center;">
+        </div>
+        <div class="app-foot">
+          <span class="app-arr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Planillas -->
+      <a href="planillas.html" class="app-card col-5 reveal">
+        <div>
+          <div class="app-num">02 · Planillas</div>
+          <span class="app-status live">●&nbsp;En vivo</span>
+        </div>
+        <h3>Planillas sin dolor cada quincena.</h3>
+        <p class="desc">CCSS, renta y horas extra calculadas automáticamente. Comprobantes por WhatsApp.</p>
+        <div class="app-vis">
+          <img src="img/section-payroll-v2.png" alt="Planillas Avantix" loading="lazy" style="object-position: top right;">
+        </div>
+        <div class="app-foot">
+          <span class="app-arr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Facturación -->
+      <a href="https://fe.avantixone.com/all_plans" target="_blank" rel="noopener" class="app-card col-4 reveal">
+        <div>
+          <div class="app-num">03 · Facturación</div>
+          <span class="app-status live">●&nbsp;MH v4.4</span>
+        </div>
+        <h3>Facturación electrónica autorizada.</h3>
+        <p class="desc">Conectado directo a Hacienda. Facturas, tiquetes, notas de crédito y débito.</p>
+        <div class="app-vis">
+          <img src="img/app-facturacion-generated-v1.png" alt="Facturación electrónica Avantix One" loading="lazy" style="object-position: center;">
+        </div>
+        <div class="app-foot">
+          <span class="app-arr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Hospedajes -->
+      <a href="https://fe.avantixone.com/facturacion-airbnb" target="_blank" rel="noopener" class="app-card col-4 reveal">
+        <div>
+          <div class="app-num">04 · Hospedajes</div>
+          <span class="app-status live">●&nbsp;Hoteles · B&amp;B</span>
+        </div>
+        <h3>POS para hoteles<br>y hospedajes.</h3>
+        <p class="desc">Reservas, check-in/out, cargos a la habitación y factura electrónica con IVA + ICT. Sync iCal con Airbnb y Booking.</p>
+        <div class="app-vis">
+          <img src="img/app-hospedajes-generated-v1.png" alt="Sistema Avantix One para hoteles y hospedajes" loading="lazy" style="object-position: center;">
+        </div>
+        <div class="app-foot">
+          <span class="app-arr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Menu Digital -->
+      <a href="https://pos.avantixone.com/pagina-web-pos" target="_blank" rel="noopener" class="app-card col-4 reveal">
+        <div>
+          <div class="app-num">05 · Menú Digital</div>
+          <span class="app-status live">●&nbsp;En vivo</span>
+        </div>
+        <h3>Un QR. Sin descargar nada.</h3>
+        <p class="desc">El cliente escanea, pide desde su celular y el pedido va directo a cocina.</p>
+        <div class="app-vis">
+          <img src="img/app-menu-digital-generated-v1.png" alt="Menú digital y pedidos online Avantix One" loading="lazy" style="object-position: center;">
+        </div>
+        <div class="app-foot">
+          <span class="app-arr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Equipo POS -->
+      <a href="https://fe.avantixone.com/store/avantix-one" target="_blank" rel="noopener" class="app-card col-8 reveal">
+        <div>
+          <div class="app-num">06 · Equipo POS</div>
+          <span class="app-status">●&nbsp;Tienda</span>
+        </div>
+        <h3>Hardware probado, configurado y listo para enchufar.</h3>
+        <p class="desc">Terminales, impresoras térmicas, scanners y kits completos para tu local. Entrega 24-48h en todo Costa Rica.</p>
+        <div class="app-vis">
+          <img src="img/app-equipo-pos-generated-v2.png" alt="Equipo POS Avantix One para restaurantes" loading="lazy" style="object-position: center;">
+        </div>
+        <div class="app-foot">
+          <span class="app-arr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLATFORM ===== -->
+<section class="platform" id="plataforma">
+  <div class="platform-inner">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="num">03</span>&nbsp;Por qué Avantix</span>
+      <h2>Hecho en Costa Rica<br>para negocios ticos.</h2>
+      <p class="lead">No es software importado adaptado a medias. Cada aplicación está construida pensando en cómo opera realmente un negocio en Costa Rica — desde el cumplimiento con Hacienda hasta el soporte por WhatsApp.</p>
+    </div>
+
+    <div class="platform-grid">
+      <div class="pl-card reveal">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 4v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <h4>Cumplimos con Hacienda</h4>
+        <p>Facturación electrónica autorizada bajo el estándar oficial vigente.</p>
+        <div class="flows">
+          <span class="row"><span class="a">→</span>versión 4.4 MH</span>
+          <span class="row"><span class="a">→</span>factura, tiquete y notas</span>
+          <span class="row"><span class="a">→</span>reportes para D-104</span>
+        </div>
+      </div>
+
+      <div class="pl-card reveal">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h4>Soporte por WhatsApp</h4>
+        <p>Hablamos español. Sin tickets que tardan días ni call centers en otra zona horaria.</p>
+        <div class="flows">
+          <span class="row"><span class="a">→</span>respuesta el mismo día</span>
+          <span class="row"><span class="a">→</span>chat directo con el equipo</span>
+          <span class="row"><span class="a">→</span>onboarding incluido</span>
+        </div>
+      </div>
+
+      <div class="pl-card reveal">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>
+        </div>
+        <h4>Aplicaciones especializadas</h4>
+        <p>Cada producto resuelve un problema concreto — sin obligarte a comprar lo que no usás.</p>
+        <div class="flows">
+          <span class="row"><span class="a">→</span>POS para restaurantes</span>
+          <span class="row"><span class="a">→</span>planillas y CCSS</span>
+          <span class="row"><span class="a">→</span>facturación Airbnb</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESOURCES / BLOG ===== -->
+<section class="resources" id="recursos" aria-labelledby="recursos-titulo">
+  <div class="resources-inner">
+    <header class="resources-head reveal">
+      <div>
+        <span class="kicker"><span class="num">04</span>&nbsp;Recursos</span>
+        <h2 id="recursos-titulo" style="margin-top:18px;">Guías para operar<br>en Costa Rica.</h2>
+      </div>
+      <div>
+        <p class="lead">Facturación electrónica, planillas, CCSS, ICT y migración a POS — escrito por el equipo que construye Avantix One.</p>
+        <a href="recursos/" class="head-cta" aria-label="Ver todos los recursos y guías">
+          Ver todos los recursos
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </header>
 
-    <!-- Productos -->
-    <section id="productos" class="products-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nuestros Productos</h2>
-                <p>Soluciones diseñadas para simplificar la operación de tu empresa.</p>
-            </div>
-            <div class="products-grid">
-                <!-- Planillas -->
-                <div class="product-card">
-                    <div class="product-card-header">
-                        <img src="img/payroll-illustration.png" alt="Planillas Avantix One" style="max-height: 120px; width: auto;">
-                        <span class="status-badge live">En Vivo</span>
-                    </div>
-                    <div class="product-card-body">
-                        <h3>Planillas Avantix One</h3>
-                        <p>Calculá planillas en minutos sin Excel. Automatización completa de nómina para empresas
-                            costarricenses.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Cálculo automático de CCSS</li>
-                            <li><i class="fas fa-check"></i> Horas extra y días dobles</li>
-                            <li><i class="fas fa-check"></i> Envío de comprobantes por WhatsApp</li>
-                            <li><i class="fas fa-check"></i> Exportación Excel para CCSS</li>
-                            <li><i class="fas fa-check"></i> Registro de asistencia con GPS</li>
-                        </ul>
-                        <a href="planillas.html" class="cta-button-outline">Ver más <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Facturación Electrónica -->
-                <div class="product-card">
-                    <div class="product-card-header">
-                        <img src="img/invoice-illustration.png" alt="Facturación Electrónica" style="max-height: 120px; width: auto;">
-                        <span class="status-badge live">En Vivo</span>
-                    </div>
-                    <div class="product-card-body">
-                        <h3>Facturación Electrónica</h3>
-                        <p>Software completo de facturación electrónica autorizado por el Ministerio de Hacienda de
-                            Costa Rica.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Facturación electrónica MH v4.4</li>
-                            <li><i class="fas fa-check"></i> Notas de crédito y débito</li>
-                            <li><i class="fas fa-check"></i> Compras, inventario y crédito</li>
-                            <li><i class="fas fa-check"></i> Contabilidad y declaraciones</li>
-                            <li><i class="fas fa-check"></i> Desde ₡5,000/mes</li>
-                        </ul>
-                        <a href="https://facturaelectronica.avantixone.com/all_plans" class="cta-button-outline">Ver más <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Facturación Airbnb -->
-                <div class="product-card">
-                    <div class="product-card-header">
-                        <img src="img/airbnb-illustration.png" alt="Facturación para Airbnb" style="max-height: 120px; width: auto;">
-                        <span class="status-badge live">En Vivo</span>
-                    </div>
-                    <div class="product-card-body">
-                        <h3>Facturación para Airbnb</h3>
-                        <p>¿Alquilás en Airbnb? Facturá electrónicamente sin complicaciones. Importá reservas y generá
-                            facturas válidas ante Hacienda.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Importación automática desde Airbnb</li>
-                            <li><i class="fas fa-check"></i> Factura o tiquete electrónico (MH)</li>
-                            <li><i class="fas fa-check"></i> IVA 13% y código CABYS automático</li>
-                            <li><i class="fas fa-check"></i> Múltiples propiedades en un solo lugar</li>
-                            <li><i class="fas fa-check"></i> Desde ₡10,000/mes</li>
-                        </ul>
-                        <a href="https://facturaelectronica.avantixone.com/facturacion-airbnb" class="cta-button-outline">Ver más <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Sistema POS Restaurantes -->
-                <div class="product-card">
-                    <div class="product-card-header">
-                        <img src="img/pos-illustration.png" alt="Sistema POS para Restaurantes" style="max-height: 120px; width: auto;">
-                        <span class="status-badge in-dev">En Desarrollo</span>
-                    </div>
-                    <div class="product-card-body">
-                        <h3>Sistema POS para Restaurantes</h3>
-                        <p>El sistema de punto de venta más completo para restaurantes. Gestión integral desde pedidos
-                            hasta delivery.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Punto de venta y cocina (KDS)</li>
-                            <li><i class="fas fa-check"></i> Menú digital con QR y pedidos online</li>
-                            <li><i class="fas fa-check"></i> Delivery con seguimiento y mapas</li>
-                            <li><i class="fas fa-check"></i> Chat multicanal + IA para pedidos</li>
-                            <li><i class="fas fa-check"></i> Modo offline PWA</li>
-                            <li><i class="fas fa-check"></i> Kiosko de autoservicio</li>
-                        </ul>
-                        <span class="cta-button-outline disabled">En Desarrollo</span>
-                    </div>
-                </div>
-            </div>
+    <div class="resources-grid">
+      <!-- Featured article -->
+      <article class="res-card feat reveal" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="author" content="Equipo Avantix One">
+        <meta itemprop="publisher" content="Avantix One">
+        <meta itemprop="inLanguage" content="es-CR">
+        <link itemprop="mainEntityOfPage" href="https://avantixone.com/recursos/facturacion-electronica-v4-4-costa-rica/">
+        <div class="res-body">
+          <div class="res-head">
+            <span class="res-cat" itemprop="articleSection"><span class="d"></span>Hacienda · v4.4</span>
+            <time class="res-meta" datetime="2026-03-15" itemprop="datePublished">15 Mar 2026</time>
+            <meta itemprop="dateModified" content="2026-04-02">
+          </div>
+          <h3 itemprop="headline">
+            <a href="recursos/facturacion-electronica-v4-4-costa-rica/" itemprop="url" style="color:inherit;">
+              Facturación Electrónica v4.4 en Costa Rica: guía completa 2026
+            </a>
+          </h3>
+          <p class="desc" itemprop="description">
+            Qué cambió en la versión 4.4 del Ministerio de Hacienda, cómo prepararte, y los errores más comunes que retrasan la autorización de tus comprobantes electrónicos.
+          </p>
+          <div class="res-foot">
+            <span class="read"><b>8 min</b> de lectura · Guía</span>
+            <a href="recursos/facturacion-electronica-v4-4-costa-rica/" class="res-arr" aria-label="Leer guía completa: Facturación Electrónica v4.4 en Costa Rica">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="social-proof-section">
-        <div class="container">
-            <div class="proof-stats-grid">
-                <div class="proof-stat">
-                    <div class="proof-number">500+</div>
-                    <div class="proof-label">Planillas procesadas</div>
-                </div>
-                <div class="proof-stat">
-                    <div class="proof-number">100+</div>
-                    <div class="proof-label">Empresas activas</div>
-                </div>
-                <div class="proof-stat">
-                    <div class="proof-number">99.9%</div>
-                    <div class="proof-label">Uptime garantizado</div>
-                </div>
-                <div class="proof-stat">
-                    <div class="proof-number"><i class="fas fa-star" style="color: #F59E0B;"></i> 4.9</div>
-                    <div class="proof-label">Satisfacción del cliente</div>
-                </div>
+        <aside class="res-visual" aria-hidden="true">
+          <span class="vt"><span class="d"></span>Comprobante electrónico</span>
+          <div>
+            <div class="vstat" style="margin-bottom:8px;">
+              <span class="lbl">Estado</span>
+              <span class="val">Aceptado <span class="v">MH</span></span>
             </div>
+            <div class="vstat-row">
+              <div class="vstat">
+                <span class="lbl">IVA 13%</span>
+                <span class="val">₡18,200</span>
+              </div>
+              <div class="vstat">
+                <span class="lbl">Total</span>
+                <span class="val">₡158,200</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="res-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="author" content="Equipo Avantix One">
+        <meta itemprop="publisher" content="Avantix One">
+        <meta itemprop="inLanguage" content="es-CR">
+        <link itemprop="mainEntityOfPage" href="https://avantixone.com/recursos/calculo-planillas-ccss-costa-rica/">
+        <div class="res-head">
+          <span class="res-cat" itemprop="articleSection"><span class="d"></span>Planillas · CCSS</span>
         </div>
-    </section>
-
-    <!-- Industrias -->
-    <section class="industries-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Diseñado para tu industria</h2>
-                <p>Nuestro software se adapta a diferentes sectores del mercado.</p>
-            </div>
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <img src="img/restaurantes_v2.jpg" alt="Restaurantes">
-                    <div class="overlay">Restaurantes</div>
-                </div>
-                <div class="industry-card">
-                    <img src="img/construccion_v2.jpg" alt="Construcción">
-                    <div class="overlay">Construcción</div>
-                </div>
-                <div class="industry-card">
-                    <img src="img/oficinas_v2.jpg" alt="Oficinas">
-                    <div class="overlay">Oficinas</div>
-                </div>
-                <div class="industry-card">
-                    <img src="img/medicos_v2.jpg" alt="Clínicas">
-                    <div class="overlay">Clínicas</div>
-                </div>
-                <div class="industry-card">
-                    <img src="img/gimnacios_v2.jpg" alt="Gimnasios">
-                    <div class="overlay">Gimnasios</div>
-                </div>
-                <div class="industry-card">
-                    <img src="img/airbnb_v2.jpg" alt="Alquileres Vacacionales">
-                    <div class="overlay">Alquileres Vacacionales</div>
-                </div>
-            </div>
+        <div class="res-body">
+          <h3 itemprop="headline">
+            <a href="recursos/calculo-planillas-ccss-costa-rica/" itemprop="url" style="color:inherit;">
+              Cálculo de planillas y CCSS en Costa Rica: paso a paso 2026
+            </a>
+          </h3>
+          <p class="desc" itemprop="description">
+            Cargas sociales, aguinaldo, horas extra y renta. Cómo evitar multas de la Caja al planillar quincena tras quincena.
+          </p>
         </div>
-    </section>
-
-    <!-- Nosotros -->
-    <section id="nosotros" class="key-benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Por qué <span class="gradient-text">Avantix One</span>?</h2>
-                <p>Tecnología accesible diseñada para el mercado costarricense.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Hecho en Costa Rica</h3>
-                    <p>Software diseñado para la legislación y necesidades locales. CCSS, Ministerio de Hacienda y más.
-                    </p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Automatización Total</h3>
-                    <p>Reducí horas de trabajo manual con cálculos automáticos y procesos inteligentes.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Soporte Directo</h3>
-                    <p>Atención personalizada por WhatsApp. Respuesta rápida y en español.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Seguro y Confiable</h3>
-                    <p>Datos protegidos con infraestructura moderna y encriptación de nivel empresarial.</p>
-                </div>
-            </div>
+        <div class="res-foot">
+          <span class="read">
+            <time datetime="2026-03-02" itemprop="datePublished">2 Mar 2026</time> · <b>6 min</b>
+          </span>
+          <a href="recursos/calculo-planillas-ccss-costa-rica/" class="res-arr" aria-label="Leer artículo: Cálculo de planillas y CCSS en Costa Rica">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
         </div>
-    </section>
+      </article>
 
-    <!-- CTA Final -->
-    <section class="cta-final">
-        <div class="container">
-            <span class="cta-badge">Empezá hoy</span>
-            <h2>Automatizá tu empresa con Avantix One</h2>
-            <p>Probá gratis por 7 días. Sin tarjeta de crédito. Sin compromisos.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://wa.me/50663602181" target="_blank" class="cta-button"
-                    style="padding: 1.5rem 3rem; font-size: 1.2rem;"><i class="fab fa-whatsapp"></i> Hablar con ventas</a>
-                <a href="#productos" class="cta-button-outline" style="padding: 1.5rem 3rem; font-size: 1.2rem; color: white; border-color: rgba(255,255,255,0.3);">Ver productos</a>
-            </div>
-            <div class="cta-trust">
-                <span><i class="fas fa-shield-alt"></i> Datos seguros</span>
-                <span><i class="fas fa-headset"></i> Soporte 24/7</span>
-                <span><i class="fas fa-flag"></i> Hecho en Costa Rica</span>
-            </div>
+      <!-- Article 3 -->
+      <article class="res-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="author" content="Equipo Avantix One">
+        <meta itemprop="publisher" content="Avantix One">
+        <meta itemprop="inLanguage" content="es-CR">
+        <link itemprop="mainEntityOfPage" href="https://avantixone.com/recursos/impuesto-ict-3-hospedajes-airbnb/">
+        <div class="res-head">
+          <span class="res-cat" itemprop="articleSection"><span class="d"></span>Hospedajes · ICT</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <img src="img/avatix_one_circle.png" alt="Avantix One" style="height: 50px; margin-bottom: 2rem;">
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Avantix One &copy; 2026 | info@avantixone.com
-            </p>
-            <div style="display: flex; justify-content: center; gap: 2rem; font-weight: 600; flex-wrap: wrap;">
-                <a href="planillas.html">Planillas</a>
-                <a href="https://facturaelectronica.avantixone.com/all_plans">Facturación</a>
-                <a href="https://facturaelectronica.avantixone.com/facturacion-airbnb">Hospedajes</a>
-                <a href="terminos.html">Términos</a>
-                <a href="privacidad.html">Privacidad</a>
-                <a href="soporte.html">Soporte</a>
-            </div>
+        <div class="res-body">
+          <h3 itemprop="headline">
+            <a href="recursos/impuesto-ict-3-hospedajes-airbnb/" itemprop="url" style="color:inherit;">
+              Impuesto ICT 3%: cuándo aplica para hoteles, Airbnb y cabinas
+            </a>
+          </h3>
+          <p class="desc" itemprop="description">
+            Cuándo cobrar el 3% del Instituto Costarricense de Turismo, cómo declararlo en la factura electrónica y qué hospedajes están exentos.
+          </p>
         </div>
-    </footer>
+        <div class="res-foot">
+          <span class="read">
+            <time datetime="2026-02-18" itemprop="datePublished">18 Feb 2026</time> · <b>5 min</b>
+          </span>
+          <a href="recursos/impuesto-ict-3-hospedajes-airbnb/" class="res-arr" aria-label="Leer artículo: Impuesto ICT 3% para hoteles y Airbnb">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
 
-    <script>
-        // Menu Toggle
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const overlay = document.querySelector('.mobile-nav-overlay');
-        const closeBtn = document.querySelector('.close-menu');
-        const links = document.querySelectorAll('.mobile-link');
+      <!-- Article 4 -->
+      <article class="res-card reveal" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="author" content="Equipo Avantix One">
+        <meta itemprop="publisher" content="Avantix One">
+        <meta itemprop="inLanguage" content="es-CR">
+        <link itemprop="mainEntityOfPage" href="https://avantixone.com/recursos/migrar-de-excel-a-pos-restaurantes/">
+        <div class="res-head">
+          <span class="res-cat" itemprop="articleSection"><span class="d"></span>POS · Restaurantes</span>
+        </div>
+        <div class="res-body">
+          <h3 itemprop="headline">
+            <a href="recursos/migrar-de-excel-a-pos-restaurantes/" itemprop="url" style="color:inherit;">
+              Cómo migrar de Excel a un POS: 5 pasos para sodas y restaurantes
+            </a>
+          </h3>
+          <p class="desc" itemprop="description">
+            Inventario, recetas, mesas y reportes. Una guía para dejar las hojas de cálculo sin perder historial de ventas.
+          </p>
+        </div>
+        <div class="res-foot">
+          <span class="read">
+            <time datetime="2026-02-05" itemprop="datePublished">5 Feb 2026</time> · <b>7 min</b>
+          </span>
+          <a href="recursos/migrar-de-excel-a-pos-restaurantes/" class="res-arr" aria-label="Leer artículo: Migrar de Excel a un POS">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-        menuToggle.onclick = () => overlay.classList.add('active');
-        closeBtn.onclick = () => overlay.classList.remove('active');
-        links.forEach(l => l.onclick = () => overlay.classList.remove('active'));
-    </script>
-    <script src="cookies.js"></script>
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-final">
+  <div class="cta-card">
+    <div>
+      <h2>Empezá hoy.<br><span class="v">Sin complicaciones.</span></h2>
+      <p>Una cuenta, todas las aplicaciones. Sin contratos largos, sin letra chiquita.</p>
+      <div style="margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="btn btn-light">
+          Hablar con ventas
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#apps" class="btn btn-ghost">Ver demo</a>
+      </div>
+    </div>
+    <div class="cta-side">
+      <div class="row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Setup en menos de 30 minutos
+      </div>
+      <div class="row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Importamos tus datos de Excel
+      </div>
+      <div class="row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Soporte por WhatsApp 7 días
+      </div>
+      <div class="row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Cancelás cuando quieras
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="soporte">
+  <div class="footer-mega">avantix<span class="v">one</span></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" aria-label="Avantix One">
+        <img src="img/avatix_one_circle.png" alt="Avantix One">
+      </a>
+      <p>Software empresarial hecho en Costa Rica. POS, planillas, facturación y más — una sola plataforma para tu negocio.</p>
+      <p style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.12em;">San José, CR · +506 6360 2181</p>
+    </div>
+    <div class="footer-col">
+      <h5>Aplicaciones</h5>
+      <ul>
+        <li><a href="https://pos.avantixone.com" target="_blank" rel="noopener">POS Restaurantes</a></li>
+        <li><a href="planillas.html">Planillas</a></li>
+        <li><a href="https://fe.avantixone.com/all_plans" target="_blank" rel="noopener">Facturación</a></li>
+        <li><a href="hospedajes.html">Hospedajes</a></li>
+        <li><a href="https://pos.avantixone.com/pagina-web-pos" target="_blank" rel="noopener">Menú Digital</a></li>
+        <li><a href="https://fe.avantixone.com/store/avantix-one" target="_blank" rel="noopener">Equipo POS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="recursos/">Recursos</a></li>
+        <li><a href="soporte.html">Soporte</a></li>
+        <li><a href="https://wa.me/50663602181" target="_blank" rel="noopener">Contacto</a></li>
+        <li><a href="mailto:info@avantixone.com">info@avantixone.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="terminos.html">Términos</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
+        <li><a href="privacidad.html#cookies">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Avantix One · Costa Rica</span>
+    <div class="right">
+      <a href="https://wa.me/50663602181" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:info@avantixone.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script src="cookies.js"></script>
+<script>
+// Nav scrolled
+const nav = document.getElementById('nav');
+const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 20); };
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Mobile menu
+const toggle = document.getElementById('menuToggle');
+const panel = document.getElementById('mobilePanel');
+if (toggle && panel) {
+  toggle.addEventListener('click', () => panel.classList.toggle('open'));
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
+}
+
+// Reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+</script>
+
 </body>
-
 </html>

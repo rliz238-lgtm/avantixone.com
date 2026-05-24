@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facturación Electrónica v4.4 en Costa Rica: guía completa 2026 | Avantix One</title>
+<meta name="description" content="Qué cambió en la versión 4.4 de facturación electrónica del Ministerio de Hacienda en Costa Rica, cómo migrar y los errores más comunes que retrasan la autorización.">
+<link rel="canonical" href="https://avantixone.com/recursos/facturacion-electronica-v4-4-costa-rica/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Equipo Avantix One">
+<meta name="keywords" content="facturación electrónica v4.4, factura electrónica Costa Rica, Hacienda v4.4, comprobantes electrónicos Costa Rica, XML factura electrónica, tiquete electrónico, nota de crédito electrónica, ATV Hacienda">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://avantixone.com/recursos/facturacion-electronica-v4-4-costa-rica/">
+<meta property="og:title" content="Facturación Electrónica v4.4 en Costa Rica: guía completa 2026">
+<meta property="og:description" content="Qué cambió, cómo migrar y los errores más comunes que retrasan tus comprobantes electrónicos.">
+<meta property="og:image" content="https://avantixone.com/img/avatix_one_circle.png">
+<meta property="og:locale" content="es_CR">
+<meta property="og:site_name" content="Avantix One">
+<meta property="article:published_time" content="2026-03-15T08:00:00-06:00">
+<meta property="article:modified_time" content="2026-04-02T08:00:00-06:00">
+<meta property="article:author" content="Equipo Avantix One">
+<meta property="article:section" content="Hacienda">
+<meta property="article:tag" content="Facturación Electrónica">
+<meta property="article:tag" content="Hacienda v4.4">
+<meta property="article:tag" content="Costa Rica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Facturación Electrónica v4.4 Costa Rica: guía 2026">
+<meta name="twitter:description" content="Cambios, migración y errores comunes en la versión 4.4 de comprobantes electrónicos.">
+<meta name="twitter:image" content="https://avantixone.com/img/avatix_one_circle.png">
+<meta name="theme-color" content="#F5F4EF">
+
+<link rel="icon" type="image/png" href="../../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../article.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Facturación Electrónica v4.4 en Costa Rica: guía completa 2026",
+  "description":"Qué cambió en la versión 4.4 de facturación electrónica del Ministerio de Hacienda, cómo migrar y los errores más comunes que retrasan la autorización.",
+  "image":"https://avantixone.com/img/avatix_one_circle.png",
+  "datePublished":"2026-03-15T08:00:00-06:00",
+  "dateModified":"2026-04-02T08:00:00-06:00",
+  "inLanguage":"es-CR",
+  "author":{"@type":"Organization","name":"Equipo Avantix One","url":"https://avantixone.com"},
+  "publisher":{"@type":"Organization","name":"Avantix One","logo":{"@type":"ImageObject","url":"https://avantixone.com/img/avatix_one_circle.png"}},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://avantixone.com/recursos/facturacion-electronica-v4-4-costa-rica/"},
+  "articleSection":"Hacienda",
+  "keywords":"facturación electrónica v4.4, Hacienda Costa Rica, comprobantes electrónicos, XML, ATV"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://avantixone.com/"},
+    {"@type":"ListItem","position":2,"name":"Recursos","item":"https://avantixone.com/recursos/"},
+    {"@type":"ListItem","position":3,"name":"Facturación Electrónica v4.4","item":"https://avantixone.com/recursos/facturacion-electronica-v4-4-costa-rica/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"¿Cuándo entra en vigencia la versión 4.4 de facturación electrónica?",
+      "acceptedAnswer":{"@type":"Answer","text":"La versión 4.4 del Ministerio de Hacienda es la vigente en Costa Rica. Todos los comprobantes electrónicos deben emitirse bajo este estándar para ser aceptados por el sistema ATV."}
+    },
+    {
+      "@type":"Question",
+      "name":"¿Qué pasa si emito una factura con una versión anterior?",
+      "acceptedAnswer":{"@type":"Answer","text":"Los comprobantes emitidos en versiones anteriores son rechazados por Hacienda, lo que impide que el cliente los acepte como gasto deducible y te obliga a re-emitirlos en v4.4."}
+    },
+    {
+      "@type":"Question",
+      "name":"¿Necesito una nueva firma digital para v4.4?",
+      "acceptedAnswer":{"@type":"Answer","text":"Si tu firma digital o certificado de Hacienda sigue vigente, no necesitas renovarlo solo por la versión 4.4. Lo que sí cambia es la estructura del XML que firmás."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../../" class="nav-logo" aria-label="Avantix One">
+      <img src="../../img/avatix_one_circle.png" alt="Avantix One">
+    </a>
+    <div class="nav-links">
+      <a href="../../#apps">Aplicaciones</a>
+      <a href="../../#industrias">Industrias</a>
+      <a href="../../#plataforma">Plataforma</a>
+      <a href="../" style="color:var(--violet);">Recursos</a>
+      <a href="../../soporte.html">Soporte</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://fe.avantixone.com/login" class="nav-link-sub">Iniciar sesión</a>
+      <a href="https://wa.me/50663602181" class="nav-btn" target="_blank" rel="noopener">Empezar →</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="../../#apps">Aplicaciones</a>
+  <a href="../../#industrias">Industrias</a>
+  <a href="../../#plataforma">Plataforma</a>
+  <a href="../">Recursos</a>
+  <a href="../../soporte.html">Soporte</a>
+  <a href="https://wa.me/50663602181" class="m-cta" target="_blank" rel="noopener">Hablar con ventas →</a>
+</div>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="../../">Inicio</a></li>
+    <li><a href="../">Recursos</a></li>
+    <li><span aria-current="page">Facturación Electrónica v4.4</span></li>
+  </ol>
+</nav>
+
+<header class="article-head">
+  <div class="article-head-inner">
+    <span class="article-cat"><span class="d"></span>Hacienda · v4.4</span>
+    <h1>Facturación Electrónica v4.4 en Costa Rica: guía completa 2026</h1>
+    <p class="article-lead">La versión 4.4 trajo cambios estructurales en el XML, nuevas validaciones del ATV y campos obligatorios que antes eran opcionales. Esta guía resume qué cambió, cómo migrar sin romper tu facturación y los errores que más rechazos generan.</p>
+    <div class="article-byline">
+      <div class="av">A1</div>
+      <span class="nm">Equipo Avantix One</span>
+      <span class="sep">·</span>
+      <time datetime="2026-03-15">15 Mar 2026</time>
+      <span class="sep">·</span>
+      <span>8 min de lectura</span>
+      <span class="sep">·</span>
+      <span>Actualizado <time datetime="2026-04-02">2 Abr 2026</time></span>
+    </div>
+  </div>
+</header>
+
+<div class="article-body">
+  <aside class="article-toc" aria-label="Tabla de contenidos">
+    <h5>En este artículo</h5>
+    <ol>
+      <li><a href="#que-es">Qué es la v4.4</a></li>
+      <li><a href="#cambios">Cambios principales</a></li>
+      <li><a href="#migrar">Cómo migrar</a></li>
+      <li><a href="#errores">Errores comunes</a></li>
+      <li><a href="#checklist">Checklist final</a></li>
+      <li><a href="#faq">Preguntas frecuentes</a></li>
+    </ol>
+  </aside>
+
+  <article class="prose">
+    <p>Si vendés en Costa Rica y emitís comprobantes electrónicos, la versión 4.4 del Ministerio de Hacienda es el estándar que tenés que cumplir hoy. No es opcional: cualquier comprobante enviado con un esquema anterior se rechaza automáticamente, lo que significa facturas perdidas, clientes molestos y gastos no deducibles.</p>
+
+    <h2 id="que-es">¿Qué es la versión 4.4?</h2>
+    <p>La v4.4 es la cuarta iteración mayor del esquema XML que Hacienda exige para todo comprobante electrónico —factura, tiquete, nota de crédito, nota de débito, comprobante de pago, factura de exportación y factura de compra. Cada comprobante se construye como un XML firmado digitalmente, se envía al sistema ATV (Administración Tributaria Virtual) y, si pasa las validaciones, recibe una respuesta de aceptación.</p>
+    <p>Las versiones anteriores (4.2, 4.3) ya están descontinuadas. La v4.4 introduce validaciones más estrictas para reducir errores, fraude y discrepancias entre lo que cobra el contribuyente y lo que reporta a Hacienda.</p>
+
+    <h2 id="cambios">Cambios principales en v4.4</h2>
+
+    <h3>1. Nuevo campo CABYS obligatorio</h3>
+    <p>Cada línea de detalle debe llevar el código CABYS (Catálogo de Bienes y Servicios) correspondiente al producto o servicio. Antes era una recomendación; ahora es obligatorio para la mayoría de operaciones. El CABYS define la tarifa de IVA aplicable y permite a Hacienda cruzar información sectorial.</p>
+
+    <h3>2. Estructura ampliada de impuestos</h3>
+    <p>El bloque de impuestos por línea ahora soporta múltiples tarifas combinadas (IVA + ICT, IVA + selectivo de consumo, etc.) y exige documentar la base imponible y el monto exonerado por separado. Esto afecta especialmente a hospedajes —que cobran IVA 13% + ICT 3%— y a bienes con tarifas reducidas (4%, 2%, 1%).</p>
+
+    <h3>3. Identificación más estricta del receptor</h3>
+    <p>Para facturas (no tiquetes), la cédula del receptor debe validar contra los formatos oficiales: cédula física (9 dígitos), jurídica (10 dígitos), DIMEX o NITE. Un número mal capturado tumba la factura.</p>
+
+    <h3>4. Plazos de envío más cortos</h3>
+    <p>El comprobante debe enviarse a Hacienda dentro de los plazos definidos —típicamente al momento de la venta, no horas o días después. Las facturas atrasadas se siguen aceptando pero generan flags en tu historial.</p>
+
+    <h3>5. Respuesta de aceptación/rechazo del receptor</h3>
+    <p>Cuando recibís una factura de compra electrónica, tenés que enviar una respuesta a Hacienda confirmando aceptación, aceptación parcial o rechazo. Si no lo hacés, ese gasto no es deducible para tu D-104.</p>
+
+    <div class="callout warn">
+      <h4>Atención con notas de crédito</h4>
+      <p>En v4.4, toda nota de crédito debe referenciar el comprobante original con su clave numérica completa (50 dígitos). Si la clave está mal o el comprobante original fue rechazado, la nota también se rechaza.</p>
+    </div>
+
+    <h2 id="migrar">Cómo migrar a v4.4 sin parar tu facturación</h2>
+
+    <p>Si todavía usás un sistema en v4.3 o más viejo, esta es la ruta corta:</p>
+
+    <ol>
+      <li><strong>Verificá tu firma digital.</strong> Necesitás un certificado vigente emitido por Hacienda (llave criptográfica) o un BCCR. Si vence en menos de 6 meses, renovalo antes.</li>
+      <li><strong>Mapeá tus productos a CABYS.</strong> Descargá el catálogo CABYS desde el sitio del BCCR y asigná un código a cada producto o servicio que vendés. Avantix lo hace automático para los rubros más comunes.</li>
+      <li><strong>Revisá las cédulas de tus clientes recurrentes.</strong> Validalas contra el padrón de Hacienda. Un cliente con cédula mal capturada va a generar rechazos en cada factura.</li>
+      <li><strong>Hacé una prueba en ambiente de stagging.</strong> Hacienda tiene un ambiente de pruebas (api-sandbox). Emití al menos 5 comprobantes de cada tipo (factura, tiquete, nota de crédito) antes de pasar a producción.</li>
+      <li><strong>Migrá un día con bajo volumen.</strong> Idealmente un domingo o feriado. Tené el sistema viejo como respaldo durante la primera semana.</li>
+    </ol>
+
+    <div class="article-cta">
+      <h3>¿No querés lidiar con XML, CABYS ni ATV?</h3>
+      <p>Avantix One genera, firma y envía todos tus comprobantes en v4.4. Conexión directa al sistema de Hacienda, mapeo CABYS incluido y soporte por WhatsApp si algo se rechaza.</p>
+      <a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="btn btn-light">
+        Hablar con ventas
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <h2 id="errores">5 errores comunes que retrasan la autorización</h2>
+
+    <h3>1. CABYS desactualizado</h3>
+    <p>El catálogo se actualiza varias veces al año. Si tu sistema usa un CABYS viejo, vas a empezar a recibir rechazos sin razón aparente. Validá el catálogo al menos una vez por trimestre.</p>
+
+    <h3>2. Cédula con guiones o espacios</h3>
+    <p>La cédula tiene que ir como string numérico sin separadores. "1-2345-6789" se rechaza; "112345678" pasa. Sí, es un detalle, pero genera el 30% de los rechazos según nuestra data interna.</p>
+
+    <h3>3. Suma de impuestos no coincide con el total</h3>
+    <p>Si el subtotal + impuestos no da exactamente el total (al céntimo), Hacienda rechaza. Cuidado con redondeos a la mitad o "redondeo bancario" que el ATV no acepta.</p>
+
+    <h3>4. Tarifa de IVA incorrecta para el CABYS</h3>
+    <p>Cada código CABYS tiene una tarifa de IVA asociada. Si pusiste IVA 13% en un producto cuyo CABYS es de canasta básica (tarifa 1%), te lo rechazan. Esto pasa muchísimo en mini-súpers y pulperías.</p>
+
+    <h3>5. Comprobante enviado fuera de hora</h3>
+    <p>Si tu reloj de servidor está mal, la fecha de emisión puede caer fuera de los rangos permitidos. Sincronizá NTP con un servidor de referencia.</p>
+
+    <h2 id="checklist">Checklist final antes de emitir en v4.4</h2>
+
+    <table>
+      <thead>
+        <tr><th>Ítem</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Firma digital vigente y backup hecho</td><td>✓</td></tr>
+        <tr><td>Usuario y clave del ATV funcionan</td><td>✓</td></tr>
+        <tr><td>Catálogo CABYS cargado y vinculado</td><td>✓</td></tr>
+        <tr><td>Cédulas de clientes validadas</td><td>✓</td></tr>
+        <tr><td>Pruebas en sandbox completadas</td><td>✓</td></tr>
+        <tr><td>Plan de rollback documentado</td><td>✓</td></tr>
+        <tr><td>Soporte técnico identificado</td><td>✓</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="faq">Preguntas frecuentes</h2>
+
+    <h3>¿Cuándo entra en vigencia la versión 4.4?</h3>
+    <p>La v4.4 ya está vigente. Todos los comprobantes electrónicos emitidos en Costa Rica deben enviarse bajo este esquema para que el sistema ATV los acepte.</p>
+
+    <h3>¿Qué pasa si emito una factura con una versión anterior?</h3>
+    <p>El sistema de Hacienda la rechaza automáticamente. Eso significa que tu cliente no la puede aceptar como gasto deducible, y vos tenés que re-emitirla en v4.4. Si esto pasa con frecuencia, podés caer en revisión.</p>
+
+    <h3>¿Necesito una nueva firma digital para v4.4?</h3>
+    <p>No. Si tu firma digital o certificado de Hacienda sigue vigente, lo seguís usando. Lo que cambia es la estructura del XML que firmás —no el certificado.</p>
+
+    <h3>¿Cuántos días tengo para enviar una factura a Hacienda?</h3>
+    <p>El estándar es enviarla al momento de la venta. En casos de contingencia (falla de internet o del ATV), tenés hasta 3 días hábiles para regularizar.</p>
+
+    <h3>¿Puedo emitir tiquete en lugar de factura?</h3>
+    <p>Sí, para ventas a consumidor final (sin cédula del receptor) podés emitir tiquete electrónico. Pero si el cliente te pide factura con su cédula, tenés que emitirla.</p>
+
+    <hr>
+
+    <p><em>¿Querés ver Avantix One operando en v4.4 con tu propio flujo? <a href="https://wa.me/50663602181" target="_blank" rel="noopener">Escribinos por WhatsApp</a> o explorá nuestras <a href="../../#apps">aplicaciones</a>.</em></p>
+  </article>
+</div>
+
+<section class="related" aria-label="Artículos relacionados">
+  <div class="related-inner">
+    <h2>Seguí leyendo</h2>
+    <div class="related-grid">
+      <a href="../calculo-planillas-ccss-costa-rica/" class="related-card">
+        <span class="cat">Planillas · CCSS</span>
+        <h3>Cálculo de planillas y CCSS en Costa Rica</h3>
+        <span class="meta">6 min · Guía</span>
+      </a>
+      <a href="../impuesto-ict-3-hospedajes-airbnb/" class="related-card">
+        <span class="cat">Hospedajes · ICT</span>
+        <h3>Impuesto ICT 3% para hoteles y Airbnb</h3>
+        <span class="meta">5 min · Guía</span>
+      </a>
+      <a href="../migrar-de-excel-a-pos-restaurantes/" class="related-card">
+        <span class="cat">POS · Restaurantes</span>
+        <h3>Cómo migrar de Excel a un POS</h3>
+        <span class="meta">7 min · Guía</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-mega">avantix<span class="v">one</span></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../../" class="nav-logo" aria-label="Avantix One">
+        <img src="../../img/avatix_one_circle.png" alt="Avantix One">
+      </a>
+      <p>Software empresarial hecho en Costa Rica. POS, planillas, facturación y más — una sola plataforma para tu negocio.</p>
+      <p style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.12em;">San José, CR · +506 6360 2181</p>
+    </div>
+    <div class="footer-col">
+      <h5>Aplicaciones</h5>
+      <ul>
+        <li><a href="https://pos.avantixone.com" target="_blank" rel="noopener">POS Restaurantes</a></li>
+        <li><a href="../../planillas.html">Planillas</a></li>
+        <li><a href="https://fe.avantixone.com/all_plans" target="_blank" rel="noopener">Facturación</a></li>
+        <li><a href="../../hospedajes.html">Hospedajes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="../">Recursos</a></li>
+        <li><a href="../../soporte.html">Soporte</a></li>
+        <li><a href="https://wa.me/50663602181" target="_blank" rel="noopener">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="../../terminos.html">Términos</a></li>
+        <li><a href="../../privacidad.html">Privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Avantix One · Costa Rica</span>
+    <div class="right">
+      <a href="https://wa.me/50663602181" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:info@avantixone.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/50663602181" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+const nav = document.getElementById('nav');
+const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 20); };
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+const toggle = document.getElementById('menuToggle');
+const panel = document.getElementById('mobilePanel');
+if (toggle && panel) {
+  toggle.addEventListener('click', () => panel.classList.toggle('open'));
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
+}
+</script>
+</body>
+</html>

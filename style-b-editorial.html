@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avantix One — Software empresarial para Costa Rica</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:#FBFAF7;
+  --ink:#0A0A0A;
+  --ink-soft:#3D3D3D;
+  --ink-muted:#737373;
+  --line:#E8E5DE;
+  --card:#fff;
+  /* per-app brand colors */
+  --pos:#FF4D4D;
+  --pos-soft:#FFE5E5;
+  --planillas:#0F9D8A;
+  --planillas-soft:#D8F2EE;
+  --factura:#3B5BFF;
+  --factura-soft:#E0E7FF;
+  --airbnb:#E11D74;
+  --airbnb-soft:#FCE0EE;
+  --menu:#7C3AED;
+  --menu-soft:#EBE0FF;
+  --equipo:#F59E0B;
+  --equipo-soft:#FFF0D6;
+  --ease:cubic-bezier(0.16, 1, 0.3, 1);
+  --max:1320px; --pad:clamp(20px,4vw,40px);
+}
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Inter',-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased; background:var(--bg); color:var(--ink);
+  letter-spacing:-0.01em; overflow-x:hidden;
+}
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; }
+button { font:inherit; cursor:pointer; border:none; background:none; }
+.serif { font-family:'Instrument Serif', Georgia, serif; font-style:italic; font-weight:400; letter-spacing:-0.01em; }
+
+/* NAV */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(251,250,247,0.7); backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid transparent;
+  transition:all 300ms var(--ease);
+}
+.nav.scrolled { border-bottom-color:var(--line); }
+.nav-inner {
+  max-width:var(--max); margin:0 auto; padding:0 var(--pad); height:64px;
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; letter-spacing:-0.02em; }
+.logo-mark {
+  width:28px; height:28px; border-radius:8px;
+  background:linear-gradient(135deg, #FF4D4D, #7C3AED 50%, #3B5BFF);
+  position:relative; overflow:hidden;
+}
+.logo-mark::after { content:''; position:absolute; inset:6px; background:var(--bg); border-radius:4px; }
+.nav-links { display:flex; gap:32px; font-size:14px; font-weight:500; }
+.nav-links a { color:var(--ink-soft); transition:color 200ms; }
+.nav-links a:hover { color:var(--ink); }
+.nav-cta { display:flex; align-items:center; gap:16px; }
+.nav-btn { background:var(--ink); color:#fff; font-size:14px; font-weight:500; padding:10px 20px; border-radius:8px; transition:all 200ms var(--ease); }
+.nav-btn:hover { background:var(--pos); transform:translateY(-1px); }
+.nav-mobile-toggle { display:none; width:36px; height:36px; position:relative; border-radius:8px; }
+.nav-mobile-toggle span { display:block; position:absolute; left:8px; right:8px; height:2px; background:var(--ink); transition:transform 300ms var(--ease); }
+.nav-mobile-toggle span:first-child { top:14px; }
+.nav-mobile-toggle span:last-child { bottom:14px; }
+.nav-mobile-toggle.open span:first-child { top:50%; transform:translateY(-50%) rotate(45deg); }
+.nav-mobile-toggle.open span:last-child { bottom:50%; transform:translateY(50%) rotate(-45deg); }
+.nav-mobile { display:none; position:fixed; top:64px; left:0; right:0; background:var(--bg); border-top:1px solid var(--line); padding:0 var(--pad); flex-direction:column; max-height:0; overflow:hidden; transition:all 400ms var(--ease); }
+.nav-mobile.open { max-height:500px; padding:24px var(--pad); }
+.nav-mobile a { display:block; font-size:22px; font-weight:600; padding:14px 0; border-bottom:1px solid var(--line); }
+.nav-btn-mobile { margin-top:16px !important; background:var(--ink); color:#fff !important; text-align:center; border-radius:8px; padding:16px !important; border:none !important; font-size:17px !important; }
+@media (max-width:980px) { .nav-links, .nav-cta { display:none; } .nav-mobile-toggle { display:block; } .nav-mobile { display:flex; } }
+
+/* TYPE */
+h1, h2, h3, h4 { font-weight:700; line-height:1.0; letter-spacing:-0.04em; color:var(--ink); }
+h1 { font-size:clamp(56px, 8vw, 128px); font-weight:800; }
+h2 { font-size:clamp(40px, 5.5vw, 80px); }
+h3 { font-size:clamp(28px, 3vw, 40px); }
+h4 { font-size:20px; font-weight:600; letter-spacing:-0.02em; }
+p { color:var(--ink-soft); font-size:17px; line-height:1.6; }
+.lead { font-size:clamp(20px, 1.8vw, 24px); line-height:1.4; color:var(--ink-soft); font-weight:400; max-width:720px; }
+.eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:13px; font-weight:600; color:var(--ink-soft);
+  padding:6px 14px; background:var(--card); border:1px solid var(--line); border-radius:980px;
+  margin-bottom:24px;
+}
+.eyebrow .dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+/* SECTIONS */
+.section { padding:clamp(80px, 12vw, 180px) var(--pad); position:relative; }
+.section-inner { max-width:var(--max); margin:0 auto; }
+.section-header { max-width:880px; margin-bottom:80px; }
+.section-header.centered { margin:0 auto 80px; text-align:center; }
+.section-header.centered .lead { margin:0 auto; }
+.section-header h2 { margin-bottom:20px; }
+
+/* BUTTONS */
+.btn { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:10px; font-size:15px; font-weight:600; transition:all 200ms var(--ease); border:1px solid transparent; }
+.btn-primary { background:var(--ink); color:#fff; }
+.btn-primary:hover { background:#000; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.15); }
+.btn-outline { background:transparent; border-color:var(--line); color:var(--ink); }
+.btn-outline:hover { background:var(--card); border-color:var(--ink); }
+.btn-color { color:#fff; border:none; }
+.btn-color:hover { transform:translateY(-2px); }
+.btn-link { display:inline-flex; align-items:center; gap:6px; font-size:15px; font-weight:600; transition:gap 200ms var(--ease); }
+.btn-link:hover { gap:10px; }
+.arrow { width:14px; height:14px; flex-shrink:0; }
+
+/* FADE */
+.fade-in { opacity:0; transform:translateY(30px); transition:opacity 800ms var(--ease), transform 800ms var(--ease); }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+.delay-1 { transition-delay:80ms; } .delay-2 { transition-delay:160ms; } .delay-3 { transition-delay:240ms; } .delay-4 { transition-delay:320ms; }
+
+/* HERO */
+.hero {
+  min-height:90vh; padding:140px var(--pad) 80px;
+  position:relative; overflow:hidden;
+}
+.hero-blob-1 {
+  position:absolute; top:-20%; right:-10%; width:60%; aspect-ratio:1;
+  background:radial-gradient(circle at 30% 30%, var(--pos), transparent 60%);
+  opacity:0.12; filter:blur(60px); pointer-events:none;
+}
+.hero-blob-2 {
+  position:absolute; bottom:-30%; left:-15%; width:50%; aspect-ratio:1;
+  background:radial-gradient(circle at 70% 70%, var(--menu), transparent 60%);
+  opacity:0.15; filter:blur(60px); pointer-events:none;
+}
+.hero-inner {
+  max-width:var(--max); margin:0 auto;
+  position:relative; z-index:1;
+}
+.hero-top { display:grid; grid-template-columns:auto auto; align-items:end; gap:24px; margin-bottom:48px; }
+.hero-meta { font-size:14px; color:var(--ink-muted); display:flex; flex-direction:column; gap:8px; text-align:right; }
+.hero h1 { font-size:clamp(56px, 9vw, 144px); line-height:0.95; letter-spacing:-0.05em; }
+.hero h1 .serif { display:inline-block; font-size:0.9em; line-height:1; }
+.hero h1 .accent-pos { color:var(--pos); }
+.hero h1 .accent-menu { color:var(--menu); }
+.hero h1 .accent-planillas { color:var(--planillas); }
+
+.hero-bottom {
+  margin-top:64px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end;
+}
+.hero-bottom p { font-size:20px; line-height:1.5; max-width:480px; }
+.hero-ctas { display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end; }
+@media (max-width:900px) {
+  .hero-top { grid-template-columns:1fr; }
+  .hero-meta { text-align:left; }
+  .hero-bottom { grid-template-columns:1fr; gap:24px; }
+  .hero-ctas { justify-content:flex-start; }
+}
+
+/* Apps marquee strip */
+.apps-strip {
+  margin-top:120px; padding:24px 0;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.apps-strip-inner {
+  display:flex; gap:48px; align-items:center;
+  animation:marquee 30s linear infinite;
+  width:max-content;
+}
+@keyframes marquee {
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
+}
+.apps-strip-item {
+  display:flex; align-items:center; gap:12px;
+  font-size:18px; font-weight:600; color:var(--ink-soft); white-space:nowrap;
+}
+.apps-strip-item .icon {
+  width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; color:#fff;
+}
+.apps-strip-dot { width:6px; height:6px; border-radius:50%; background:var(--line); flex-shrink:0; }
+
+/* APPS GRID — asymmetric */
+.apps-section { padding:clamp(100px, 14vw, 200px) var(--pad); }
+.apps-grid {
+  display:grid; grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:20px;
+}
+.app-card {
+  background:var(--card); border:1px solid var(--line); border-radius:24px;
+  padding:36px; position:relative; overflow:hidden;
+  transition:all 300ms var(--ease);
+  display:flex; flex-direction:column; min-height:280px;
+}
+.app-card:hover { transform:translateY(-4px); box-shadow:0 30px 60px -20px rgba(0,0,0,0.08); }
+.app-card.featured { grid-row:span 2; grid-column:1; padding:48px; min-height:600px; }
+.app-card.big { grid-column:span 2; min-height:340px; }
+.app-card-header { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+.app-card-icon {
+  width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+  font-size:22px; color:#fff; flex-shrink:0;
+}
+.app-card-icon.big { width:72px; height:72px; border-radius:18px; font-size:32px; }
+.app-card-status {
+  font-size:11px; font-weight:700; padding:5px 10px; border-radius:980px;
+  text-transform:uppercase; letter-spacing:0.04em;
+}
+.app-card-status.live { background:var(--planillas-soft); color:var(--planillas); }
+.app-card-status.beta { background:var(--equipo-soft); color:var(--equipo); }
+.app-card h3 { font-size:32px; margin-bottom:12px; line-height:1.05; }
+.app-card.featured h3 { font-size:48px; }
+.app-card p { font-size:16px; margin-bottom:24px; flex:1; }
+.app-card.featured p { font-size:19px; line-height:1.55; }
+.app-card-link { display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:700; transition:gap 200ms var(--ease); margin-top:auto; }
+.app-card-link:hover { gap:12px; }
+.app-card-decoration {
+  position:absolute; right:-40px; bottom:-40px; width:200px; height:200px;
+  border-radius:50%; opacity:0.06; pointer-events:none;
+}
+.app-card.featured .app-card-decoration { width:380px; height:380px; right:-100px; bottom:-100px; opacity:0.08; }
+@media (max-width:1000px) {
+  .apps-grid { grid-template-columns:1fr 1fr; }
+  .app-card.featured { grid-row:auto; grid-column:span 2; min-height:480px; }
+  .app-card.big { grid-column:span 2; }
+}
+@media (max-width:640px) {
+  .apps-grid { grid-template-columns:1fr; }
+  .app-card.featured, .app-card.big { grid-column:auto; min-height:auto; padding:32px; }
+}
+
+/* PRODUCT SECTIONS - colored per app */
+.product { padding:clamp(100px, 14vw, 200px) var(--pad); position:relative; overflow:hidden; }
+.product-inner { max-width:var(--max); margin:0 auto; }
+.product-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.product-grid.reverse > :first-child { order:2; }
+.product-eyebrow-wrap { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+.product-num {
+  font-family:'Instrument Serif', serif;
+  font-size:32px; font-weight:400; font-style:italic;
+}
+.product-pill {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:13px; font-weight:600;
+  padding:6px 14px; border-radius:980px;
+  background:#fff; border:1px solid var(--line);
+}
+.product-pill .dot { width:8px; height:8px; border-radius:50%; }
+.product h2 { font-size:clamp(40px, 5vw, 72px); margin-bottom:24px; line-height:1.0; }
+.product h2 .serif-accent {
+  display:inline-block; line-height:1;
+  font-family:'Instrument Serif', serif; font-style:italic; font-weight:400;
+}
+.product-desc { font-size:20px; line-height:1.5; color:var(--ink-soft); margin-bottom:32px; max-width:520px; }
+.product-features {
+  display:flex; flex-direction:column; gap:14px; margin-bottom:40px;
+  border-top:1px solid var(--line); padding-top:24px;
+}
+.product-feature { display:flex; align-items:flex-start; gap:14px; font-size:15px; color:var(--ink); }
+.product-feature-num {
+  font-size:12px; font-weight:700; color:var(--ink-muted);
+  font-variant-numeric:tabular-nums; min-width:24px;
+  border-right:1px solid var(--line); padding-right:14px; margin-top:2px;
+}
+.product-feature-text { font-weight:500; flex:1; line-height:1.5; }
+.product-image-wrap {
+  position:relative; padding:48px;
+  border-radius:32px;
+  background:var(--card);
+  border:1px solid var(--line);
+}
+.product-image-wrap img { width:100%; }
+.product-image-decoration {
+  position:absolute; top:-40px; right:-40px;
+  width:180px; height:180px; border-radius:50%; opacity:0.15; filter:blur(40px);
+  pointer-events:none;
+}
+@media (max-width:900px) {
+  .product-grid { grid-template-columns:1fr; gap:48px; }
+  .product-grid.reverse > :first-child { order:0; }
+}
+
+
+/* PRODUCT MOCKUPS */
+.mock {
+  position:relative; width:100%; background:#fff; border-radius:18px;
+  border:1px solid var(--line); overflow:hidden;
+  box-shadow:0 30px 60px -25px rgba(10,10,10,0.18), 0 10px 24px -10px rgba(10,10,10,0.08);
+  font-family:'Inter',-apple-system,sans-serif;
+  color:var(--ink);
+}
+.mock-bar { display:flex; align-items:center; gap:7px; padding:12px 16px; border-bottom:1px solid var(--line); background:#FAFAF7; }
+.mock-bar .dot { width:9px; height:9px; border-radius:50%; background:#D9D6CD; }
+.mock-bar .title { margin-left:12px; font-size:11px; font-weight:600; color:var(--ink-muted); letter-spacing:0.06em; text-transform:uppercase; }
+.mock-bar .pill { margin-left:auto; font-size:10px; font-weight:600; padding:4px 10px; border-radius:980px; background:var(--planillas-soft); color:var(--planillas); }
+.mock-body { padding:22px; }
+.mock-h { font-size:18px; font-weight:700; letter-spacing:-0.02em; color:var(--ink); margin-bottom:4px; }
+.mock-sub { font-size:11px; color:var(--ink-muted); }
+
+/* POS mockup */
+.mock-pos-grid { display:grid; grid-template-columns:1.35fr 1fr; gap:14px; }
+.mock-pos-menu { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.mock-pos-tile { background:#FAFAF7; border:1px solid var(--line); border-radius:10px; padding:8px; display:flex; flex-direction:column; gap:6px; aspect-ratio:1; }
+.mock-pos-tile .thumb { flex:1; border-radius:6px; background:var(--pos-soft); position:relative; overflow:hidden; }
+.mock-pos-tile .thumb::after { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 30%, rgba(255,77,77,0.35), transparent 65%); }
+.mock-pos-tile .name { font-size:10px; font-weight:600; line-height:1.2; color:var(--ink); }
+.mock-pos-tile .price { font-size:9px; color:var(--ink-muted); font-variant-numeric:tabular-nums; }
+.mock-pos-ticket { background:#FAFAF7; border:1px solid var(--line); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:6px; }
+.mock-pos-ticket .row { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:11px; padding:6px 0; border-bottom:1px dashed var(--line); }
+.mock-pos-ticket .row:last-of-type { border-bottom:none; }
+.mock-pos-ticket .qty { display:inline-block; width:18px; height:18px; border-radius:5px; background:var(--pos); color:#fff; font-size:10px; font-weight:700; text-align:center; line-height:18px; margin-right:7px; }
+.mock-pos-ticket .name { flex:1; font-weight:500; color:var(--ink); }
+.mock-pos-ticket .total { display:flex; justify-content:space-between; align-items:baseline; margin-top:6px; padding-top:10px; border-top:1px solid var(--line); }
+.mock-pos-ticket .total .lbl { font-size:11px; color:var(--ink-muted); }
+.mock-pos-ticket .total .val { font-size:17px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; }
+.mock-pos-pay { background:var(--pos); color:#fff; border-radius:10px; padding:11px; font-size:12px; font-weight:600; text-align:center; margin-top:6px; box-shadow:0 6px 14px -4px rgba(255,77,77,0.5); }
+
+/* Planillas mockup */
+.mock-table { width:100%; font-size:11px; border-collapse:separate; border-spacing:0; }
+.mock-table th { text-align:left; font-size:10px; font-weight:600; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.05em; padding:10px 12px; border-bottom:1px solid var(--line); }
+.mock-table th.r, .mock-table td.r { text-align:right; font-variant-numeric:tabular-nums; }
+.mock-table td { padding:12px; border-bottom:1px solid var(--line); }
+.mock-table tr:last-child td { border-bottom:none; }
+.mock-emp { display:flex; align-items:center; gap:9px; }
+.mock-emp .av { width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,var(--planillas),#0B7568); color:#fff; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.mock-emp .av.v2 { background:linear-gradient(135deg,#5B73FF,#3B5BFF); }
+.mock-emp .av.v3 { background:linear-gradient(135deg,#F59E0B,#C77600); }
+.mock-emp .av.v4 { background:linear-gradient(135deg,#A78BFA,#7C3AED); }
+.mock-emp .name { font-weight:600; color:var(--ink); }
+.mock-emp .role { font-size:9px; color:var(--ink-muted); }
+.mock-tag { display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:980px; font-size:9px; font-weight:600; background:var(--planillas-soft); color:var(--planillas); }
+.mock-tag .d { width:5px; height:5px; border-radius:50%; background:currentColor; }
+.mock-payroll-totals { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+.mock-payroll-tot { padding:12px; border-radius:10px; background:#FAFAF7; border:1px solid var(--line); }
+.mock-payroll-tot .lbl { font-size:9px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
+.mock-payroll-tot .val { font-size:15px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; }
+.mock-payroll-tot.accent { background:var(--planillas); border-color:var(--planillas); }
+.mock-payroll-tot.accent .lbl, .mock-payroll-tot.accent .val { color:#fff; }
+
+/* Factura mockup */
+.mock-inv-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid var(--line); }
+.mock-inv-head .num { font-size:11px; color:var(--ink-muted); margin-bottom:4px; font-variant-numeric:tabular-nums; }
+.mock-inv-head .to { font-size:13px; font-weight:600; color:var(--ink); }
+.mock-inv-head .meta { font-size:10px; color:var(--ink-muted); margin-top:3px; }
+.mock-inv-badge { display:inline-flex; align-items:center; gap:6px; padding:6px 11px; border-radius:8px; background:var(--factura); color:#fff; font-size:10px; font-weight:600; }
+.mock-inv-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:#fff; }
+.mock-inv-lines .l { display:grid; grid-template-columns:1fr 50px 70px; gap:10px; padding:9px 0; font-size:11px; align-items:center; border-bottom:1px dashed var(--line); }
+.mock-inv-lines .l:last-child { border-bottom:none; }
+.mock-inv-lines .desc { font-weight:500; color:var(--ink); }
+.mock-inv-lines .qty, .mock-inv-lines .amt { text-align:right; font-variant-numeric:tabular-nums; color:var(--ink-soft); }
+.mock-inv-totals { margin-top:14px; padding-top:12px; border-top:1px solid var(--line); display:grid; gap:6px; font-size:11px; }
+.mock-inv-totals .row { display:flex; justify-content:space-between; }
+.mock-inv-totals .row.tot { padding-top:8px; border-top:1px solid var(--line); margin-top:4px; font-size:15px; font-weight:700; color:var(--ink); }
+.mock-inv-totals .row span:last-child { font-variant-numeric:tabular-nums; }
+
+/* Airbnb mockup */
+.mock-rsv { display:flex; flex-direction:column; gap:10px; }
+.mock-rsv-card { display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:center; padding:12px; border-radius:12px; background:#FAFAF7; border:1px solid var(--line); }
+.mock-rsv-card .av { width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--airbnb),#A8125A); color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.mock-rsv-card .av.v2 { background:linear-gradient(135deg,#FF7E5F,#feb47b); }
+.mock-rsv-card .av.v3 { background:linear-gradient(135deg,#5B9DFF,#3B5BFF); }
+.mock-rsv-card .name { font-size:12px; font-weight:600; color:var(--ink); }
+.mock-rsv-card .dates { font-size:10px; color:var(--ink-muted); margin-top:2px; font-variant-numeric:tabular-nums; }
+.mock-rsv-card .right { text-align:right; }
+.mock-rsv-card .amount { font-size:13px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; }
+.mock-rsv-card .status { display:inline-flex; align-items:center; gap:4px; font-size:9px; font-weight:600; color:var(--planillas); margin-top:3px; }
+.mock-rsv-card .status::before { content:''; width:5px; height:5px; border-radius:50%; background:currentColor; }
+.mock-rsv-stats { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+.mock-rsv-stat { padding:14px; border-radius:12px; background:linear-gradient(135deg,var(--airbnb-soft), #fff); border:1px solid var(--line); }
+.mock-rsv-stat .lbl { font-size:10px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
+.mock-rsv-stat .val { font-size:22px; font-weight:700; color:var(--ink); letter-spacing:-0.02em; font-variant-numeric:tabular-nums; }
+.mock-rsv-stat .delta { font-size:10px; font-weight:600; color:var(--planillas); margin-top:2px; }
+
+/* Equipo (hardware) */
+.mock-hw { display:flex; flex-direction:column; gap:12px; }
+.mock-hw-card { display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center; padding:14px; border-radius:14px; background:#FAFAF7; border:1px solid var(--line); }
+.mock-hw-card .visual { width:64px; height:64px; border-radius:12px; background:var(--equipo-soft); position:relative; overflow:hidden; flex-shrink:0; }
+.mock-hw-card .visual::before, .mock-hw-card .visual::after { content:''; position:absolute; }
+/* Terminal: screen + base */
+.mock-hw-card.terminal .visual::before { left:14px; right:14px; top:10px; height:30px; border-radius:5px; background:var(--ink); border:2px solid var(--equipo); }
+.mock-hw-card.terminal .visual::after { left:8px; right:8px; bottom:8px; height:8px; border-radius:3px; background:#D9D6CD; }
+/* Printer */
+.mock-hw-card.printer .visual { background:#F3EFE5; }
+.mock-hw-card.printer .visual::before { left:10px; right:10px; top:14px; bottom:12px; border-radius:6px; background:#fff; border:1px solid var(--line); }
+.mock-hw-card.printer .visual::after { left:18px; right:18px; top:20px; height:18px; background:repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 4px); }
+/* Scanner */
+.mock-hw-card.scanner .visual { background:var(--pos-soft); }
+.mock-hw-card.scanner .visual::before { left:8px; top:18px; width:36px; height:28px; border-radius:8px 18px 8px 8px; background:var(--ink); }
+.mock-hw-card.scanner .visual::after { left:16px; top:24px; width:20px; height:2px; background:var(--pos); box-shadow:0 0 8px var(--pos); }
+.mock-hw-card .name { font-size:13px; font-weight:700; color:var(--ink); }
+.mock-hw-card .desc { font-size:10px; color:var(--ink-muted); margin-top:3px; line-height:1.4; }
+.mock-hw-card .right { text-align:right; }
+.mock-hw-card .price { font-size:14px; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums; }
+.mock-hw-card .stock { font-size:9px; font-weight:600; color:var(--planillas); margin-top:3px; display:inline-flex; align-items:center; gap:4px; }
+.mock-hw-card .stock::before { content:''; width:5px; height:5px; border-radius:50%; background:currentColor; }
+
+.product-image-wrap { padding:28px; }
+.product-image-wrap.equipo-wrap { background:linear-gradient(160deg, var(--equipo-soft), var(--card)); }
+
+
+/* UBER FLASH SECTION */
+.uber-flash {
+  background:var(--ink); color:#fff;
+  border-radius:32px;
+  margin:0 var(--pad);
+  padding:clamp(60px, 10vw, 120px);
+  position:relative; overflow:hidden;
+}
+.uber-flash-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, oklch(0.6 0.25 30 / 0.3), transparent),
+    radial-gradient(ellipse 50% 40% at 20% 80%, oklch(0.6 0.25 300 / 0.2), transparent);
+  pointer-events:none;
+}
+.uber-flash-inner { position:relative; z-index:1; max-width:1180px; margin:0 auto; }
+.uber-flash-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:8px 16px; background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15); border-radius:980px;
+  font-size:13px; font-weight:600; margin-bottom:32px;
+}
+.uber-flash-badge .pulse { width:8px; height:8px; border-radius:50%; background:#FF4D4D; animation:pulse 1.5s infinite; }
+@keyframes pulse {
+  0%,100% { box-shadow:0 0 0 0 rgba(255,77,77,0.7); }
+  50% { box-shadow:0 0 0 10px rgba(255,77,77,0); }
+}
+.uber-flash h2 { color:#fff; font-size:clamp(44px, 6vw, 88px); margin-bottom:24px; line-height:0.98; letter-spacing:-0.04em; }
+.uber-flash h2 .gradient {
+  background:linear-gradient(135deg, #FFC56D, #FF4D4D);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  font-family:'Instrument Serif', serif; font-style:italic; font-weight:400;
+}
+.uber-flash-lead { font-size:clamp(18px, 1.7vw, 22px); color:rgba(255,255,255,0.7); max-width:760px; line-height:1.5; margin-bottom:64px; }
+
+.flow {
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;
+}
+.flow-step {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px; padding:28px;
+  backdrop-filter:blur(10px);
+}
+.flow-step-num {
+  font-family:'Instrument Serif', serif; font-style:italic;
+  font-size:48px; color:rgba(255,255,255,0.3); line-height:1; margin-bottom:16px;
+}
+.flow-step h4 { color:#fff; margin-bottom:10px; font-size:20px; }
+.flow-step p { color:rgba(255,255,255,0.6); font-size:14px; line-height:1.5; }
+@media (max-width:900px) { .flow { grid-template-columns:1fr 1fr; } }
+@media (max-width:560px) { .flow { grid-template-columns:1fr; } }
+
+.uber-cta {
+  margin-top:64px;
+  display:flex; justify-content:space-between; align-items:center; gap:32px;
+  padding:40px;
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+}
+.uber-cta-text h3 { color:#fff; font-size:28px; margin-bottom:6px; }
+.uber-cta-text p { color:rgba(255,255,255,0.6); font-size:15px; }
+.btn-flash {
+  background:#fff; color:var(--ink); padding:16px 28px; font-size:16px;
+  border-radius:12px; font-weight:600; display:inline-flex; align-items:center; gap:8px;
+  transition:all 200ms var(--ease);
+}
+.btn-flash:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,255,255,0.15); }
+@media (max-width:700px) { .uber-cta { flex-direction:column; align-items:flex-start; padding:28px; } }
+
+/* TESTIMONIAL/QUOTE */
+.quote-section {
+  padding:clamp(80px, 12vw, 160px) var(--pad);
+  text-align:center;
+}
+.quote-section-inner { max-width:1000px; margin:0 auto; }
+.quote-mark {
+  font-family:'Instrument Serif', serif; font-style:italic;
+  font-size:120px; line-height:1; color:var(--ink); opacity:0.15;
+  margin-bottom:0px;
+}
+.quote {
+  font-family:'Instrument Serif', serif; font-style:italic; font-weight:400;
+  font-size:clamp(28px, 3.5vw, 48px); line-height:1.2; letter-spacing:-0.02em;
+  color:var(--ink); margin-bottom:32px;
+}
+.quote-author { font-size:15px; color:var(--ink-muted); font-weight:500; }
+.quote-author strong { color:var(--ink); font-weight:600; }
+
+/* CTA FINAL */
+.cta-final {
+  padding:clamp(100px, 14vw, 180px) var(--pad);
+  text-align:center;
+  position:relative; overflow:hidden;
+}
+.cta-final::before, .cta-final::after {
+  content:''; position:absolute; width:600px; height:600px; border-radius:50%; filter:blur(80px); opacity:0.15; pointer-events:none;
+}
+.cta-final::before { top:-30%; left:-10%; background:var(--pos); }
+.cta-final::after { bottom:-40%; right:-10%; background:var(--menu); }
+.cta-final-inner { position:relative; z-index:1; max-width:900px; margin:0 auto; }
+.cta-final h2 { font-size:clamp(48px, 7vw, 96px); margin-bottom:24px; line-height:0.98; }
+.cta-final h2 .serif { display:inline-block; }
+.cta-final p { font-size:clamp(18px, 1.7vw, 22px); margin-bottom:48px; max-width:600px; margin-left:auto; margin-right:auto; }
+.cta-final-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+/* FOOTER */
+.footer { background:var(--ink); color:#fff; padding:80px var(--pad) 40px; }
+.footer-inner { max-width:var(--max); margin:0 auto; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:64px; }
+.footer-brand { max-width:380px; }
+.footer-brand .logo-mark { width:32px; height:32px; }
+.footer-brand .footer-logo { display:flex; align-items:center; gap:12px; margin-bottom:20px; font-size:20px; font-weight:700; color:#fff; }
+.footer-brand p { color:rgba(255,255,255,0.6); font-size:15px; line-height:1.6; }
+.footer-col h5 { font-size:13px; font-weight:600; margin-bottom:20px; color:#fff; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.footer-col a { font-size:14px; color:rgba(255,255,255,0.6); transition:color 200ms; }
+.footer-col a:hover { color:#fff; }
+.footer-bottom { padding-top:32px; border-top:1px solid rgba(255,255,255,0.1); display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; font-size:13px; color:rgba(255,255,255,0.5); }
+@media (max-width:800px) { .footer-grid { grid-template-columns:1fr 1fr; } .footer-brand { grid-column:span 2; } }
+
+
+/* Modern SVG icons */
+.apps-strip-item .icon svg { width:18px; height:18px; }
+.app-card-icon svg { width:26px; height:26px; }
+.app-card-icon.big svg { width:38px; height:38px; }
+
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span class="logo-mark"></span>Avantix One</a>
+    <div class="nav-links">
+      <a href="#apps">Aplicaciones</a>
+      <a href="#pos">POS</a>
+      <a href="#planillas">Planillas</a>
+      <a href="#facturacion">Facturación</a>
+      <a href="#hospedajes">Hospedajes</a>
+    </div>
+    <div class="nav-cta">
+      <a href="soporte.html" style="font-size:14px; color:var(--ink-soft);">Soporte</a>
+      <a href="#apps" class="nav-btn">Ver aplicaciones</a>
+    </div>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#apps">Aplicaciones</a>
+    <a href="#pos">POS Restaurantes</a>
+    <a href="#planillas">Planillas</a>
+    <a href="#facturacion">Facturación</a>
+    <a href="#hospedajes">Hospedajes</a>
+    <a href="#apps" class="nav-btn-mobile">Ver aplicaciones</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+  <div class="hero-inner">
+    <div class="hero-top fade-in visible">
+      <div>
+        <span class="eyebrow"><span class="dot" style="background:var(--planillas);"></span>Software empresarial · Costa Rica</span>
+      </div>
+      <div class="hero-meta">
+        <span>Edición 2026</span>
+        <span>San José, CR</span>
+      </div>
+    </div>
+    <h1 class="fade-in visible delay-1">
+      Una <span class="serif accent-pos" style="font-family: &quot;Instrument Serif&quot;">app</span> para<br/>
+      cada parte<br/>
+      de tu <span class="serif accent-menu">negocio.</span>
+    </h1>
+    <div class="hero-bottom fade-in visible delay-2">
+      <p>Punto de venta, planillas, facturación electrónica, hospedajes — software empresarial hecho en Costa Rica.</p>
+      <div class="hero-ctas">
+        <a href="#apps" class="btn btn-primary">Explorar aplicaciones
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://wa.me/50663602181" class="btn btn-outline">Hablar con ventas</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee strip -->
+  <div class="apps-strip fade-in">
+    <div class="apps-strip-inner">
+      <span class="apps-strip-item"><span class="icon" style="background:var(--pos);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7a2 2 0 0 0 2 2h2v10a1 1 0 0 0 2 0V2"/><path d="M7 2v7"/><path d="M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h1v8a1 1 0 0 0 2 0Z"/></svg></span>POS Restaurantes</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--planillas);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Planillas</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--factura);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></span>Facturación Electrónica</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--airbnb);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>Hospedajes Airbnb</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--menu);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"/><rect x="8.25" y="6.25" width="2.5" height="2.5" rx="0.4"/><rect x="13.25" y="6.25" width="2.5" height="2.5" rx="0.4"/><rect x="8.25" y="11.25" width="2.5" height="2.5" rx="0.4"/><rect x="13.25" y="11.25" width="2.5" height="2.5" rx="0.4"/><line x1="9.5" y1="18" x2="14.5" y2="18"/></svg></span>Menú Digital</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--equipo);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/><line x1="9" y1="18" x2="15" y2="18"/></svg></span>Equipo POS</span>
+      <span class="apps-strip-dot"></span>
+      <!-- Duplicate for marquee loop -->
+      <span class="apps-strip-item"><span class="icon" style="background:var(--pos);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7a2 2 0 0 0 2 2h2v10a1 1 0 0 0 2 0V2"/><path d="M7 2v7"/><path d="M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h1v8a1 1 0 0 0 2 0Z"/></svg></span>POS Restaurantes</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--planillas);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Planillas</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--factura);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></span>Facturación Electrónica</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--airbnb);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>Hospedajes Airbnb</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--menu);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"/><rect x="8.25" y="6.25" width="2.5" height="2.5" rx="0.4"/><rect x="13.25" y="6.25" width="2.5" height="2.5" rx="0.4"/><rect x="8.25" y="11.25" width="2.5" height="2.5" rx="0.4"/><rect x="13.25" y="11.25" width="2.5" height="2.5" rx="0.4"/><line x1="9.5" y1="18" x2="14.5" y2="18"/></svg></span>Menú Digital</span>
+      <span class="apps-strip-dot"></span>
+      <span class="apps-strip-item"><span class="icon" style="background:var(--equipo);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/><line x1="9" y1="18" x2="15" y2="18"/></svg></span>Equipo POS</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPS GRID -->
+<section class="apps-section" id="apps">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="eyebrow"><span class="dot"></span>Las aplicaciones</span>
+      <h2>Seis aplicaciones,<br/>una sola plataforma.</h2>
+      <p class="lead">Cada herramienta está optimizada para una parte de tu operación. Todas se conectan entre sí cuando las necesités juntas.</p>
+    </div>
+
+    <div class="apps-grid">
+      <!-- Featured POS -->
+      <a href="#pos" class="app-card featured fade-in" style="background:linear-gradient(160deg, var(--pos-soft), var(--card));">
+        <div class="app-card-decoration" style="background:var(--pos);"></div>
+        <div class="app-card-header">
+          <div class="app-card-icon big" style="background:var(--pos);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7a2 2 0 0 0 2 2h2v10a1 1 0 0 0 2 0V2"/><path d="M7 2v7"/><path d="M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h1v8a1 1 0 0 0 2 0Z"/></svg></div>
+          <span class="app-card-status beta">Beta</span>
+        </div>
+        <h3>POS para Restaurantes</h3>
+        <p>Punto de venta, cocina, menú digital, delivery con Uber Flash y pagos. El sistema operativo completo para restaurantes ticos. Tomá pedidos, gestioná cocina, hacé delivery — todo sincronizado en tiempo real.</p>
+        <span class="app-card-link" style="color:var(--pos);">Conocer POS
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <a href="planillas.html" class="app-card fade-in delay-1" style="background:linear-gradient(160deg, var(--planillas-soft), var(--card));">
+        <div class="app-card-decoration" style="background:var(--planillas);"></div>
+        <div class="app-card-header">
+          <div class="app-card-icon" style="background:var(--planillas);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <span class="app-card-status live">En vivo</span>
+        </div>
+        <h3>Planillas</h3>
+        <p>Calculá CCSS, renta y horas extra automáticamente.</p>
+        <span class="app-card-link" style="color:var(--planillas);">Ir a Planillas
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <a href="https://facturaelectronica.avantixone.com/all_plans" class="app-card fade-in delay-2" style="background:linear-gradient(160deg, var(--factura-soft), var(--card));">
+        <div class="app-card-decoration" style="background:var(--factura);"></div>
+        <div class="app-card-header">
+          <div class="app-card-icon" style="background:var(--factura);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></div>
+          <span class="app-card-status live">En vivo</span>
+        </div>
+        <h3>Facturación</h3>
+        <p>Autorizada por Hacienda. MH v4.4 + inventario.</p>
+        <span class="app-card-link" style="color:var(--factura);">Ir a Facturación
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <a href="https://facturaelectronica.avantixone.com/facturacion-airbnb" class="app-card fade-in delay-1" style="background:linear-gradient(160deg, var(--airbnb-soft), var(--card));">
+        <div class="app-card-decoration" style="background:var(--airbnb);"></div>
+        <div class="app-card-header">
+          <div class="app-card-icon" style="background:var(--airbnb);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+          <span class="app-card-status live">En vivo</span>
+        </div>
+        <h3>Hospedajes Airbnb</h3>
+        <p>Importá reservas y facturá ante Hacienda automáticamente.</p>
+        <span class="app-card-link" style="color:var(--airbnb);">Ir a Hospedajes
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <a href="#menu-digital" class="app-card fade-in delay-2" style="background:linear-gradient(160deg, var(--menu-soft), var(--card));">
+        <div class="app-card-decoration" style="background:var(--menu);"></div>
+        <div class="app-card-header">
+          <div class="app-card-icon" style="background:var(--menu);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"/><rect x="8.25" y="6.25" width="2.5" height="2.5" rx="0.4"/><rect x="13.25" y="6.25" width="2.5" height="2.5" rx="0.4"/><rect x="8.25" y="11.25" width="2.5" height="2.5" rx="0.4"/><rect x="13.25" y="11.25" width="2.5" height="2.5" rx="0.4"/><line x1="9.5" y1="18" x2="14.5" y2="18"/></svg></div>
+          <span class="app-card-status beta">Beta</span>
+        </div>
+        <h3>Menú Digital</h3>
+        <p>QR sin app. Pedidos al celular + Uber Flash.</p>
+        <span class="app-card-link" style="color:var(--menu);">Conocer Menú
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <a href="#equipo-pos" class="app-card big fade-in delay-3" style="background:linear-gradient(160deg, var(--equipo-soft), var(--card));">
+        <div class="app-card-decoration" style="background:var(--equipo);"></div>
+        <div class="app-card-header">
+          <div class="app-card-icon" style="background:var(--equipo);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/><line x1="9" y1="18" x2="15" y2="18"/></svg></div>
+          <span class="app-card-status beta">Beta</span>
+        </div>
+        <h3>Equipo POS</h3>
+        <p>Hardware profesional: terminales touchscreen all-in-one, impresoras térmicas para tiquetes y comandas, scanner de códigos. Instalación y soporte incluidos.</p>
+        <span class="app-card-link" style="color:var(--equipo);">Conocer Equipo
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- POS RESTAURANTES -->
+<section class="product" id="pos">
+  <div class="product-inner">
+    <div class="product-grid fade-in">
+      <div class="product-text">
+        <div class="product-eyebrow-wrap">
+          <span class="product-num">01</span>
+          <span class="product-pill"><span class="dot" style="background:var(--pos);"></span>POS Restaurantes</span>
+        </div>
+        <h2>El sistema operativo de tu <span class="serif-accent" style="color:var(--pos);">restaurante.</span></h2>
+        <p class="product-desc">Punto de venta, cocina, menú digital con Uber Flash, delivery y pagos — todo en una sola pantalla, sincronizado en tiempo real.</p>
+        <div class="product-features">
+          <div class="product-feature"><span class="product-feature-num">01</span><span class="product-feature-text">Terminal touchscreen con modo offline (PWA)</span></div>
+          <div class="product-feature"><span class="product-feature-num">02</span><span class="product-feature-text">KDS (Kitchen Display System) para la cocina</span></div>
+          <div class="product-feature"><span class="product-feature-num">03</span><span class="product-feature-text">Menú digital con QR — sin descargar app</span></div>
+          <div class="product-feature"><span class="product-feature-num">04</span><span class="product-feature-text">Delivery automatizado con Uber Flash</span></div>
+          <div class="product-feature"><span class="product-feature-num">05</span><span class="product-feature-text">Chat multicanal + IA para tomar pedidos</span></div>
+          <div class="product-feature"><span class="product-feature-num">06</span><span class="product-feature-text">Kiosko de autoservicio</span></div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://wa.me/50663602181" class="btn btn-color" style="background:var(--pos);">Reservar acceso
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#menu-digital" class="btn btn-outline">Ver Menú Digital + Uber Flash</a>
+        </div>
+      </div>
+      <div class="product-image-wrap" style="background:linear-gradient(160deg, var(--pos-soft), var(--card));">
+        <div class="product-image-decoration" style="background:var(--pos);"></div>
+        <div class="mock">
+          <div class="mock-bar"><span class="dot" style="background:#FF6055"></span><span class="dot" style="background:#FBC02D"></span><span class="dot" style="background:#34C759"></span><span class="title">POS · Mesa 04</span><span class="pill">Activa</span></div>
+          <div class="mock-body">
+            <div class="mock-pos-grid">
+              <div class="mock-pos-menu">
+                <div class="mock-pos-tile"><div class="thumb"></div><div><div class="name">Casado</div><div class="price">₡4 500</div></div></div>
+                <div class="mock-pos-tile"><div class="thumb" style="background:#FFE5C2"></div><div><div class="name">Tacos al pastor</div><div class="price">₡3 800</div></div></div>
+                <div class="mock-pos-tile"><div class="thumb" style="background:#FFD1D1"></div><div><div class="name">Hamburguesa</div><div class="price">₡5 200</div></div></div>
+                <div class="mock-pos-tile"><div class="thumb" style="background:#D1E7FF"></div><div><div class="name">Limonada</div><div class="price">₡1 500</div></div></div>
+                <div class="mock-pos-tile"><div class="thumb" style="background:#E5D9FF"></div><div><div class="name">Café</div><div class="price">₡1 200</div></div></div>
+                <div class="mock-pos-tile"><div class="thumb" style="background:#D8F2EE"></div><div><div class="name">Ensalada</div><div class="price">₡3 200</div></div></div>
+              </div>
+              <div class="mock-pos-ticket">
+                <div class="row"><span><span class="qty">2</span><span class="name">Casado pollo</span></span><span style="font-variant-numeric:tabular-nums">₡9 000</span></div>
+                <div class="row"><span><span class="qty">1</span><span class="name">Hamburguesa</span></span><span style="font-variant-numeric:tabular-nums">₡5 200</span></div>
+                <div class="row"><span><span class="qty">3</span><span class="name">Limonada</span></span><span style="font-variant-numeric:tabular-nums">₡4 500</span></div>
+                <div class="total"><span class="lbl">Total</span><span class="val">₡18 700</span></div>
+                <div class="mock-pos-pay">Cobrar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBER FLASH FEATURE -->
+<section style="padding:clamp(40px, 6vw, 80px) 0;" id="menu-digital">
+  <div class="uber-flash">
+    <div class="uber-flash-bg"></div>
+    <div class="uber-flash-inner">
+      <div class="fade-in">
+        <div class="uber-flash-badge">
+          <span class="pulse"></span>
+          Integración exclusiva · Menú Digital + Uber Flash
+        </div>
+        <h2>El cliente escanea.<br/>Uber lo entrega.<br/><span class="gradient">Tú solo cocinás.</span></h2>
+        <p class="uber-flash-lead">El primer menú digital de Costa Rica con delivery automatizado por Uber Flash. Sin repartidores propios. Sin apps adicionales. Sin complicaciones.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step fade-in">
+          <div class="flow-step-num">i.</div>
+          <h4>Cliente escanea el QR</h4>
+          <p>En la mesa o desde la calle. Sin descargar ninguna aplicación.</p>
+        </div>
+        <div class="flow-step fade-in delay-1">
+          <div class="flow-step-num">ii.</div>
+          <h4>Hace su pedido</h4>
+          <p>Menú con fotos, alérgenos y modificadores. Pagá con tarjeta o SINPE.</p>
+        </div>
+        <div class="flow-step fade-in delay-2">
+          <div class="flow-step-num">iii.</div>
+          <h4>Cocina recibe la orden</h4>
+          <p>Aparece automáticamente en el KDS. Tu equipo solo cocina.</p>
+        </div>
+        <div class="flow-step fade-in delay-3">
+          <div class="flow-step-num">iv.</div>
+          <h4>Uber Flash entrega</h4>
+          <p>Uber asigna un repartidor automáticamente. Llega caliente al cliente.</p>
+        </div>
+      </div>
+
+      <div class="uber-cta fade-in">
+        <div class="uber-cta-text">
+          <h3>Cero repartidores propios.</h3>
+          <p>Pagás solo por entrega. Sin contratos, sin equipo extra.</p>
+        </div>
+        <a href="https://wa.me/50663602181" class="btn-flash">Reservar acceso anticipado
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANILLAS -->
+<section class="product" id="planillas">
+  <div class="product-inner">
+    <div class="product-grid reverse fade-in">
+      <div class="product-text">
+        <div class="product-eyebrow-wrap">
+          <span class="product-num">02</span>
+          <span class="product-pill"><span class="dot" style="background:var(--planillas);"></span>Planillas</span>
+        </div>
+        <h2>Planillas que se calculan <span class="serif-accent" style="color:var(--planillas);">solas.</span></h2>
+        <p class="product-desc">CCSS, renta, horas extra, aguinaldo y vacaciones. Todo automático y exportable al sistema de la Caja.</p>
+        <div class="product-features">
+          <div class="product-feature"><span class="product-feature-num">01</span><span class="product-feature-text">Cálculo automático de CCSS y deducciones</span></div>
+          <div class="product-feature"><span class="product-feature-num">02</span><span class="product-feature-text">Horas extra, días dobles y feriados</span></div>
+          <div class="product-feature"><span class="product-feature-num">03</span><span class="product-feature-text">Comprobantes por WhatsApp con un click</span></div>
+          <div class="product-feature"><span class="product-feature-num">04</span><span class="product-feature-text">Exportación lista para CCSS</span></div>
+          <div class="product-feature"><span class="product-feature-num">05</span><span class="product-feature-text">Registro de asistencia con GPS</span></div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="planillas.html" class="btn btn-color" style="background:var(--planillas);">Ir a Planillas
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/50663602181" class="btn btn-outline">Hablar con ventas</a>
+        </div>
+      </div>
+      <div class="product-image-wrap" style="background:linear-gradient(160deg, var(--planillas-soft), var(--card));">
+        <div class="product-image-decoration" style="background:var(--planillas);"></div>
+        <div class="mock">
+          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">Planilla quincenal · Sept 1–15</span><span class="pill">12 colaboradores</span></div>
+          <div class="mock-body">
+            <table class="mock-table">
+              <thead><tr><th>Colaborador</th><th class="r">Salario bruto</th><th class="r">CCSS</th><th class="r">Neto</th></tr></thead>
+              <tbody>
+                <tr><td><div class="mock-emp"><div class="av">MR</div><div><div class="name">María Rojas</div><div class="role">Cocinera</div></div></div></td><td class="r">₡425 000</td><td class="r">₡44 200</td><td class="r"><strong>₡380 800</strong></td></tr>
+                <tr><td><div class="mock-emp"><div class="av v2">JC</div><div><div class="name">Juan Castro</div><div class="role">Mesero</div></div></div></td><td class="r">₡380 000</td><td class="r">₡39 520</td><td class="r"><strong>₡340 480</strong></td></tr>
+                <tr><td><div class="mock-emp"><div class="av v3">AS</div><div><div class="name">Ana Solís</div><div class="role">Cajera</div></div></div></td><td class="r">₡410 000</td><td class="r">₡42 640</td><td class="r"><strong>₡367 360</strong></td></tr>
+                <tr><td><div class="mock-emp"><div class="av v4">LV</div><div><div class="name">Luis Vargas</div><div class="role">Asistente</div></div></div></td><td class="r">₡350 000</td><td class="r">₡36 400</td><td class="r"><strong>₡313 600</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="mock-payroll-totals">
+              <div class="mock-payroll-tot"><div class="lbl">Bruto total</div><div class="val">₡1 565 000</div></div>
+              <div class="mock-payroll-tot"><div class="lbl">Cargas sociales</div><div class="val">₡162 760</div></div>
+              <div class="mock-payroll-tot accent"><div class="lbl">A pagar</div><div class="val">₡1 402 240</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACTURACIÓN -->
+<section class="product" id="facturacion" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="product-inner">
+    <div class="product-grid fade-in">
+      <div class="product-text">
+        <div class="product-eyebrow-wrap">
+          <span class="product-num">03</span>
+          <span class="product-pill"><span class="dot" style="background:var(--factura);"></span>Facturación Electrónica</span>
+        </div>
+        <h2>Facturación electrónica autorizada por <span class="serif-accent" style="color:var(--factura);">Hacienda.</span></h2>
+        <p class="product-desc">Software completo de facturación con MH v4.4. Compras, inventario, contabilidad y declaraciones automáticas.</p>
+        <div class="product-features">
+          <div class="product-feature"><span class="product-feature-num">01</span><span class="product-feature-text">Factura, tiquete y notas (MH v4.4)</span></div>
+          <div class="product-feature"><span class="product-feature-num">02</span><span class="product-feature-text">Compras, inventario y crédito</span></div>
+          <div class="product-feature"><span class="product-feature-num">03</span><span class="product-feature-text">Cuentas por cobrar y pagar</span></div>
+          <div class="product-feature"><span class="product-feature-num">04</span><span class="product-feature-text">Contabilidad y libros automáticos</span></div>
+          <div class="product-feature"><span class="product-feature-num">05</span><span class="product-feature-text">Declaraciones D-104 y D-103 listas</span></div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://facturaelectronica.avantixone.com/all_plans" class="btn btn-color" style="background:var(--factura);">Ir a Facturación
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="product-image-wrap" style="background:linear-gradient(160deg, var(--factura-soft), var(--card));">
+        <div class="product-image-decoration" style="background:var(--factura);"></div>
+        <div class="mock">
+          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">Factura electrónica</span><span class="pill" style="background:var(--factura-soft); color:var(--factura)">MH v4.4</span></div>
+          <div class="mock-body">
+            <div class="mock-inv-head">
+              <div>
+                <div class="num">FE-001-001-00012458</div>
+                <div class="to">Soda La Esquina S.A.</div>
+                <div class="meta">3-101-456789 · Heredia, CR</div>
+              </div>
+              <div class="mock-inv-badge">Autorizada por Hacienda</div>
+            </div>
+            <div class="mock-inv-lines">
+              <div class="l"><span class="desc">Servicio mensual POS</span><span class="qty">×1</span><span class="amt">₡25 000</span></div>
+              <div class="l"><span class="desc">Facturación electrónica</span><span class="qty">×1</span><span class="amt">₡15 000</span></div>
+              <div class="l"><span class="desc">Soporte técnico premium</span><span class="qty">×1</span><span class="amt">₡8 000</span></div>
+              <div class="l"><span class="desc">Capacitación inicial</span><span class="qty">×2</span><span class="amt">₡20 000</span></div>
+            </div>
+            <div class="mock-inv-totals">
+              <div class="row"><span>Subtotal</span><span>₡68 000</span></div>
+              <div class="row"><span>IVA 13%</span><span>₡8 840</span></div>
+              <div class="row tot"><span>Total</span><span>₡76 840</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSPEDAJES -->
+<section class="product" id="hospedajes">
+  <div class="product-inner">
+    <div class="product-grid reverse fade-in">
+      <div class="product-text">
+        <div class="product-eyebrow-wrap">
+          <span class="product-num">04</span>
+          <span class="product-pill"><span class="dot" style="background:var(--airbnb);"></span>Hospedajes Airbnb</span>
+        </div>
+        <h2>¿Alquilás en Airbnb? Facturá sin <span class="serif-accent" style="color:var(--airbnb);">complicaciones.</span></h2>
+        <p class="product-desc">Importá automáticamente tus reservas y generá facturas electrónicas válidas ante Hacienda. Múltiples propiedades en un solo lugar.</p>
+        <div class="product-features">
+          <div class="product-feature"><span class="product-feature-num">01</span><span class="product-feature-text">Importación automática desde Airbnb</span></div>
+          <div class="product-feature"><span class="product-feature-num">02</span><span class="product-feature-text">Factura o tiquete electrónico (MH)</span></div>
+          <div class="product-feature"><span class="product-feature-num">03</span><span class="product-feature-text">IVA 13% y código CABYS automático</span></div>
+          <div class="product-feature"><span class="product-feature-num">04</span><span class="product-feature-text">Múltiples propiedades en un panel</span></div>
+          <div class="product-feature"><span class="product-feature-num">05</span><span class="product-feature-text">Reportes mensuales para Hacienda</span></div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://facturaelectronica.avantixone.com/facturacion-airbnb" class="btn btn-color" style="background:var(--airbnb);">Ir a Hospedajes
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="product-image-wrap" style="background:linear-gradient(160deg, var(--airbnb-soft), var(--card));">
+        <div class="product-image-decoration" style="background:var(--airbnb);"></div>
+        <div class="mock">
+          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">Reservas · Septiembre</span><span class="pill" style="background:var(--airbnb-soft); color:var(--airbnb)">8 facturadas</span></div>
+          <div class="mock-body">
+            <div class="mock-rsv-stats">
+              <div class="mock-rsv-stat"><div class="lbl">Ingresos del mes</div><div class="val">₡2.4M</div><div class="delta">↑ 18% vs ago</div></div>
+              <div class="mock-rsv-stat"><div class="lbl">Ocupación</div><div class="val">87%</div><div class="delta">26 noches</div></div>
+            </div>
+            <div class="mock-rsv">
+              <div class="mock-rsv-card"><div class="av">SM</div><div><div class="name">Sarah Miller · Casa Volcán</div><div class="dates">12 — 15 sept · 3 noches</div></div><div class="right"><div class="amount">₡180 000</div><div class="status">Facturada</div></div></div>
+              <div class="mock-rsv-card"><div class="av v2">DK</div><div><div class="name">David Kim · Loft Centro</div><div class="dates">16 — 22 sept · 6 noches</div></div><div class="right"><div class="amount">₡240 000</div><div class="status">Facturada</div></div></div>
+              <div class="mock-rsv-card"><div class="av v3">PG</div><div><div class="name">Pablo García · Casa Playa</div><div class="dates">20 — 24 sept · 4 noches</div></div><div class="right"><div class="amount">₡320 000</div><div class="status">Facturada</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO POS -->
+<section class="product" id="equipo-pos" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="product-inner">
+    <div class="product-grid fade-in">
+      <div class="product-text">
+        <div class="product-eyebrow-wrap">
+          <span class="product-num">05</span>
+          <span class="product-pill"><span class="dot" style="background:var(--equipo);"></span>Equipo POS</span>
+        </div>
+        <h2>Hardware profesional, listo para <span class="serif-accent" style="color:var(--equipo);">usar.</span></h2>
+        <p class="product-desc">Terminal touchscreen all-in-one, impresoras térmicas para tiquetes y comandas, y scanner de códigos. Instalación y soporte incluidos.</p>
+        <div class="product-features">
+          <div class="product-feature"><span class="product-feature-num">01</span><span class="product-feature-text">Terminal touchscreen all-in-one</span></div>
+          <div class="product-feature"><span class="product-feature-num">02</span><span class="product-feature-text">Impresoras térmicas para tiquetes y comandas</span></div>
+          <div class="product-feature"><span class="product-feature-num">03</span><span class="product-feature-text">Conexión USB, Ethernet o Wi-Fi</span></div>
+          <div class="product-feature"><span class="product-feature-num">04</span><span class="product-feature-text">Scanner de códigos de barras</span></div>
+          <div class="product-feature"><span class="product-feature-num">05</span><span class="product-feature-text">Instalación y soporte incluidos</span></div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://wa.me/50663602181" class="btn btn-color" style="background:var(--equipo);">Reservar acceso
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="product-image-wrap" style="background:linear-gradient(160deg, var(--equipo-soft), var(--card));">
+        <div class="product-image-decoration" style="background:var(--equipo);"></div>
+        <div class="mock">
+          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">Catálogo de equipo</span><span class="pill" style="background:var(--equipo-soft); color:var(--equipo)">En stock</span></div>
+          <div class="mock-body">
+            <div class="mock-hw">
+              <div class="mock-hw-card terminal"><div class="visual"></div><div><div class="name">Terminal touch 15.6"</div><div class="desc">All-in-one · Android · cajón incluido</div></div><div class="right"><div class="price">₡425 000</div><div class="stock">3 disponibles</div></div></div>
+              <div class="mock-hw-card printer"><div class="visual"></div><div><div class="name">Impresora térmica 80mm</div><div class="desc">USB + Ethernet · corte automático</div></div><div class="right"><div class="price">₡85 000</div><div class="stock">12 disponibles</div></div></div>
+              <div class="mock-hw-card scanner"><div class="visual"></div><div><div class="name">Lector códigos 2D</div><div class="desc">Inalámbrico · QR + barras · base</div></div><div class="right"><div class="price">₡68 000</div><div class="stock">8 disponibles</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contacto">
+  <div class="cta-final-inner fade-in">
+    <h2>Llevá tu empresa al <span class="serif" style="color:var(--pos);">siguiente</span> nivel.</h2>
+    <p>Empezá con la aplicación que necesités. Te ayudamos a configurar todo en menos de una hora.</p>
+    <div class="cta-final-btns">
+      <a href="https://wa.me/50663602181" class="btn btn-primary">Hablar con ventas
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#apps" class="btn btn-outline">Ver aplicaciones</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-mark"></span>Avantix One</div>
+        <p>Software empresarial hecho en Costa Rica. Una plataforma para cada parte de tu negocio.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Aplicaciones</h5>
+        <ul>
+          <li><a href="planillas.html">Planillas</a></li>
+          <li><a href="https://facturaelectronica.avantixone.com/all_plans">Facturación</a></li>
+          <li><a href="https://facturaelectronica.avantixone.com/facturacion-airbnb">Hospedajes</a></li>
+          <li><a href="#pos">POS Restaurantes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="soporte.html">Soporte</a></li>
+          <li><a href="https://wa.me/50663602181">Contacto</a></li>
+          <li><a href="terminos.html">Términos</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="mailto:info@avantixone.com">info@avantixone.com</a></li>
+          <li><a href="https://wa.me/50663602181">+506 6360-2181</a></li>
+          <li>San José, Costa Rica</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Avantix One. Todos los derechos reservados.</span>
+      <span>Hecho con ❤ en Costa Rica</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  });
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  toggle.addEventListener('click', () => {
+    mobile.classList.toggle('open');
+    toggle.classList.toggle('open');
+  });
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobile.classList.remove('open');
+    toggle.classList.remove('open');
+  }));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
